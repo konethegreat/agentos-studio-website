@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AgentOS Studio: one desk for every coding agent</title>
+  <meta name="description" content="AgentOS Studio is a native desktop control plane for Hermes, Claude Code, Qoder and Antigravity: one memory, one mission queue and one review gate. Download for Windows, macOS and Linux.">
+  <meta name="author" content="Kone Tshivhinda and K-ONE IT SOLUTIONS">
+  <meta name="theme-color" content="#f4f1ea">
+  <meta property="og:title" content="AgentOS Studio: one desk for every coding agent">
+  <meta property="og:description" content="One memory, one mission queue and one review gate for Hermes, Claude Code, Qoder and Antigravity. Free, MIT licensed, local-first.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/" aria-label="AgentOS Studio home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">AgentOS<span>studio</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="/download/">Download</a>
+        <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/GETTING-STARTED.md">Docs</a>
+        <a href="https://github.com/konethegreat/agentos-studio">GitHub</a>
+        <a href="/privacy/">Privacy</a>
+      </nav>
+      <a class="ui-button ui-button--sm header-cta" href="/download/">Get the app</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span>v0.13.0 · Windows, macOS, Linux</p>
+          <h1>One desk for <em>every</em> coding agent.</h1>
+          <p class="lede">Hermes, Claude Code, Qoder and Antigravity work from one memory, one mission queue and one review gate. AgentOS Studio is the native control plane that keeps them on the same job.</p>
+          <div class="hero-actions">
+            <a class="ui-button ui-button--lg" id="primary-download" href="/download/" data-download>Download AgentOS Studio</a>
+            <a class="ui-button ui-button--lg ui-button--secondary" href="#how">See how it works</a>
+          </div>
+          <p class="hero-note">Free and MIT licensed. No account. Builds are unsigned, so the first launch asks you to confirm. <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/INSTALL.md">What you will see</a>.</p>
+        </div>
+
+        <div class="hero-panel" aria-label="Sample mission receipt">
+          <canvas class="panel-canvas" data-nebula aria-hidden="true"></canvas>
+          <div class="panel-veil" aria-hidden="true"></div>
+          <div class="panel-top"><span>example mission</span><span class="panel-status">merged</span></div>
+          <p class="panel-caption">step by step</p>
+          <div class="receipt">
+            <p class="receipt-title">Harden the export path</p>
+            <p class="receipt-sub">agentos-studio · reviewed diff</p>
+            <ul class="receipt-steps">
+              <li><span>Plan</span><span>acceptance criteria</span></li>
+              <li><span>Worktree</span><span class="ok">isolated copy</span></li>
+              <li><span>Review</span><span class="ok">second agent approved</span></li>
+              <li><span>Merge</span><span class="ok">squash, one commit</span></li>
+              <li><span>Verify</span><span class="ok">checks green</span></li>
+            </ul>
+            <p class="receipt-foot">Every line stays traceable to the goal, the agent, the model and the review.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="how">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-num">01 / SURFACES</p>
+          <h2>Chat, missions and memory in the same window.</h2>
+          <p class="section-lede">No terminals to wire together and no prompts to copy between tools. The agents you already use keep their own accounts and their own models; Studio gives them a shared desk.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <p class="feature-kicker">Chat</p>
+            <h3>Talk to the agent you already pay for.</h3>
+            <p>Open a folder, pick Hermes, Claude Code, Qoder or Antigravity, and talk. Replies stream in with rendered Markdown, and every tool call appears as a card you can open.</p>
+          </article>
+          <article class="feature">
+            <p class="feature-kicker">Missions</p>
+            <h3>Give work a definition of done.</h3>
+            <p>Point an agent at a repository, state the goal and the acceptance criteria. Studio creates an isolated worktree, runs the mission and keeps the diff for review.</p>
+          </article>
+          <article class="feature">
+            <p class="feature-kicker">Memory</p>
+            <h3>Your notes, in a folder you own.</h3>
+            <p>Every agent reads the same vault of Markdown files. Recall is ranked, decisions get recorded, and nothing is hidden in a store you cannot open.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--ink">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-num">02 / MISSIONS</p>
+          <h2>A mission ends in a reviewed merge, not a transcript.</h2>
+          <p class="section-lede">The difference between a useful agent and a fleet is what happens after the code is written. Studio makes the end of a mission a decision, not a summary.</p>
+        </div>
+        <div class="flow">
+          <div class="flow-row">
+            <span class="flow-index">01</span>
+            <h3>The goal becomes a definition of done.</h3>
+            <p>The mission records what finished means: the repository, the criteria, the checks. The agent plans against that, not against a chat message.</p>
+          </div>
+          <div class="flow-row">
+            <span class="flow-index">02</span>
+            <h3>Work happens in an isolated worktree.</h3>
+            <p>Each mission gets its own copy of the repository, so two agents cannot step on each other and your working tree stays yours.</p>
+          </div>
+          <div class="flow-row">
+            <span class="flow-index">03</span>
+            <h3>A second agent reviews the diff.</h3>
+            <p>The reviewer opens the pull request, reads the change and either approves it or sends it back with findings. The agent that wrote the code does not grade its own work.</p>
+          </div>
+          <div class="flow-row">
+            <span class="flow-index">04</span>
+            <h3>The merge is squashed and checked.</h3>
+            <p>Approved work lands as one commit with the evidence attached. Checks run before the merge, and the result is recorded on the mission.</p>
+          </div>
+        </div>
+        <p class="flow-note"><strong>Review gate</strong> lives in the app, not in a prompt.</p>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-num">03 / PLATFORM</p>
+          <h2>Built local-first, in Rust.</h2>
+          <p class="section-lede">One native binary is the desktop app and the shared MCP bus. Your chats, keys and notes stay on your machine unless you connect a service yourself.</p>
+        </div>
+        <dl class="spec">
+          <div><dt>Runtime</dt><dd>Tauri v2 with a Rust core</dd></div>
+          <div><dt>Interface</dt><dd>React 19 and TypeScript</dd></div>
+          <div><dt>Hub</dt><dd>The same binary runs <code>agentos-hub</code>: 13 MCP tools over JSON-RPC 2.0 on stdio</dd></div>
+          <div><dt>Memory</dt><dd>Markdown notes in a vault folder you choose</dd></div>
+          <div><dt>Data</dt><dd><code>%APPDATA%\agentos-studio</code> on Windows, <code>~/Library/Application Support/agentos-studio</code> on macOS, <code>~/.config/agentos-studio</code> on Linux</dd></div>
+          <div><dt>Network</dt><dd>Update checks, GitHub, your model provider, and Notion only if you connect it</dd></div>
+          <div><dt>Telemetry</dt><dd>None</dd></div>
+          <div><dt>License</dt><dd>MIT</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="band band--ink">
+      <div class="wrap install-grid">
+        <div>
+          <p class="section-num section-num--inline">04 / INSTALL</p>
+          <h2 class="install-title">Install it honestly.</h2>
+          <p class="section-lede">Builds are not signed with a paid certificate, so Windows SmartScreen and macOS Gatekeeper ask once. The install notes show the exact dialog and what to click. Nothing asks you to weaken a security setting.</p>
+          <div class="install-actions">
+            <a class="ui-button ui-button--on-ink" href="/download/">Download v0.13.0</a>
+            <a class="ui-button ui-button--quiet-on-ink" href="https://github.com/konethegreat/agentos-studio/blob/main/docs/INSTALL.md">Read the install notes</a>
+          </div>
+          <p class="install-note">Every release is published on GitHub with the installers and their signatures. The app updates itself through a signed updater.</p>
+        </div>
+        <ul class="install-list">
+          <li><span>01</span><span><strong>Download</strong> the installer for your platform.</span></li>
+          <li><span>02</span><span><strong>Windows:</strong> More info, then Run anyway. <strong>macOS:</strong> Open Anyway in Privacy and Security.</span></li>
+          <li><span>03</span><span><strong>Start Studio</strong>, open Setup and press Auto-Setup and Repair Everything.</span></li>
+          <li><span>04</span><span><strong>Pick a vault.</strong> On a machine with no vault, the first launch creates one in Documents.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap cta-inner">
+        <div>
+          <h2>Ready when you are.</h2>
+          <p>Bring one agent or four. Studio connects what is installed and hides what is not.</p>
+        </div>
+        <div class="hero-actions cta-actions">
+          <a class="ui-button ui-button--lg" href="/download/" data-download>Download AgentOS Studio</a>
+          <a class="ui-button ui-button--lg ui-button--secondary" href="https://github.com/konethegreat/agentos-studio/blob/main/docs/GETTING-STARTED.md">Read the docs</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-mark">AgentOS Studio</p>
+        <p class="footer-note">A desktop control plane for coding agents. Chats, keys and notes stay on your machine. Built by Kone Tshivhinda and K-ONE IT SOLUTIONS in Johannesburg.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="/download/">Download</a>
+        <a href="https://github.com/konethegreat/agentos-studio">Repository</a>
+        <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/INSTALL.md">Install notes</a>
+        <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/PRIVACY.md">App privacy</a>
+        <a href="/privacy/">Site privacy</a>
+        <a href="/credits/">Credits</a>
+      </nav>
+    </div>
+    <div class="wrap footer-legal">
+      <p>Copyright 2026 K-ONE IT SOLUTIONS. AgentOS Studio is MIT licensed.</p>
+      <p>UI Vault components by <a href="https://github.com/konethegreat/ui-vault">Kone Tshivhinda</a>, MIT. Fonts under the SIL Open Font License.</p>
+    </div>
+  </footer>
+  <script src="/app.js" defer></script>
+  <script src="/nebula.js" defer></script>
+</body>
+</html>

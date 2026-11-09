@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Site privacy: AgentOS Studio</title>
+  <meta name="description" content="What this download site does and does not collect. No cookies, no analytics, no third-party scripts. Downloads redirect to GitHub.">
+  <meta name="author" content="Kone Tshivhinda and K-ONE IT SOLUTIONS">
+  <meta name="theme-color" content="#f4f1ea">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/" aria-label="AgentOS Studio home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">AgentOS<span>studio</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="/download/">Download</a>
+        <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/GETTING-STARTED.md">Docs</a>
+        <a href="https://github.com/konethegreat/agentos-studio">GitHub</a>
+        <a href="/privacy/" aria-current="page">Privacy</a>
+      </nav>
+      <a class="ui-button ui-button--sm header-cta" href="/download/">Get the app</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="wrap">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Privacy</p>
+        <h1>This site keeps it small.</h1>
+        <p class="lede">This page covers this website. The app has its own privacy page, which lists the files it reads and the network requests it makes.</p>
+        <div class="page-meta">
+          <span class="pill">No cookies</span>
+          <span class="pill">No analytics</span>
+          <span class="pill">No third-party scripts</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap prose">
+      <h2>What this site does</h2>
+      <p>The pages are static HTML, CSS and two small scripts served by Cloudflare. Fonts are served from this domain. There is no account, no form, no newsletter and no advertising.</p>
+      <ul>
+        <li>No cookies are set, and nothing is stored in your browser.</li>
+        <li>No analytics, pixel, session recorder or tag manager runs here.</li>
+        <li>No third-party script or font host receives a request from this site.</li>
+      </ul>
+
+      <h2>What Cloudflare sees</h2>
+      <p>Cloudflare processes each request to deliver the page and to protect the site from abuse. That includes the request URL, your IP address, your user agent and the time. This is ordinary web server processing, not a profile built by this site. Cloudflare's own privacy terms apply to its logs.</p>
+      <p>This site does not combine those logs with anything else, and it has no place to store personal data even if it wanted to.</p>
+
+      <h2>Downloads</h2>
+      <p>When you choose a platform, this site's Worker asks the public GitHub API for the latest AgentOS Studio release, then redirects your browser to the installer on GitHub. GitHub sees the download request and its own privacy policy applies from that point. The Worker does not record who downloaded what.</p>
+      <p>The release lookup is cached at the edge for a short time, and a copy of the last known release is stored in this repository, so the download page keeps working when GitHub is unreachable.</p>
+
+      <h2>The app itself</h2>
+      <p>AgentOS Studio stores chats, settings and memory on your machine. It has no telemetry. The app privacy page lists every file it reads and every network request it makes, including update checks and model provider traffic.</p>
+      <p><a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/PRIVACY.md">Read the app privacy page</a></p>
+
+      <h2>Questions</h2>
+      <p>Open an issue on <a href="https://github.com/konethegreat/agentos-studio/issues">the repository</a>. Do not put personal data in a public issue.</p>
+
+      <h2>Changes</h2>
+      <p>If this page changes, the change lands in the site repository with its history visible. There is no mailing list to notify, because there is no mailing list.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-mark">AgentOS Studio</p>
+        <p class="footer-note">A desktop control plane for coding agents. Chats, keys and notes stay on your machine. Built by Kone Tshivhinda and K-ONE IT SOLUTIONS in Johannesburg.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="/download/">Download</a>
+        <a href="https://github.com/konethegreat/agentos-studio">Repository</a>
+        <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/INSTALL.md">Install notes</a>
+        <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/PRIVACY.md">App privacy</a>
+        <a href="/privacy/">Site privacy</a>
+        <a href="/credits/">Credits</a>
+      </nav>
+    </div>
+    <div class="wrap footer-legal">
+      <p>Copyright 2026 K-ONE IT SOLUTIONS. AgentOS Studio is MIT licensed.</p>
+      <p>UI Vault components by <a href="https://github.com/konethegreat/ui-vault">Kone Tshivhinda</a>, MIT. Fonts under the SIL Open Font License.</p>
+    </div>
+  </footer>
+  <script src="/app.js" defer></script>
+</body>
+</html>
