@@ -1,0 +1,43 @@
+{
+  "version": "0.13.0",
+  "tag": "v0.13.0",
+  "publishedAt": "2026-11-09T13:43:18Z",
+  "page": "https://github.com/konethegreat/agentos-studio/releases/tag/v0.13.0",
+  "assets": {
+    "windows": {
+      "name": "AgentOS.Studio_0.13.0_x64-setup.exe",
+      "size": 6051707,
+      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v0.13.0/AgentOS.Studio_0.13.0_x64-setup.exe"
+    },
+    "windows-msi": {
+      "name": "AgentOS.Studio_0.13.0_x64_en-US.msi",
+      "size": 8441856,
+      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v0.13.0/AgentOS.Studio_0.13.0_x64_en-US.msi"
+    },
+    "macos-arm64": {
+      "name": "AgentOS.Studio_0.13.0_aarch64.dmg",
+      "size": 7314705,
+      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v0.13.0/AgentOS.Studio_0.13.0_aarch64.dmg"
+    },
+    "macos-x64": {
+      "name": "AgentOS.Studio_0.13.0_x64.dmg",
+      "size": 7715779,
+      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v0.13.0/AgentOS.Studio_0.13.0_x64.dmg"
+    },
+    "linux-appimage": {
+      "name": "AgentOS.Studio_0.13.0_amd64.AppImage",
+      "size": 85903864,
+      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v0.13.0/AgentOS.Studio_0.13.0_amd64.AppImage"
+    },
+    "linux-deb": {
+      "name": "AgentOS.Studio_0.13.0_amd64.deb",
+      "size": 7933032,
+      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v0.13.0/AgentOS.Studio_0.13.0_amd64.deb"
+    },
+    "linux-rpm": {
+      "name": "AgentOS.Studio-0.13.0-1.x86_64.rpm",
+      "size": 7936138,
+      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v0.13.0/AgentOS.Studio-0.13.0-1.x86_64.rpm"
+    }
+  }
+}

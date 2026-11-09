@@ -1,0 +1,22 @@
+{
+  "name": "agentos-studio-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "author": "Kone Tshivhinda",
+  "description": "Download site for AgentOS Studio, served by a Cloudflare Worker with static assets.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "wrangler dev --port 8787",
+    "test": "node --test worker/test/*.test.mjs",
+    "check": "node scripts/check.mjs",
+    "sync:release": "node scripts/sync-release.mjs",
+    "dry-run": "wrangler deploy --dry-run --outdir=.wrangler-dry",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.159.0"
+  }
+}
