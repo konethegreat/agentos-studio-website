@@ -137,6 +137,10 @@
     function resize() {
       var rect = canvas.getBoundingClientRect();
       var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      // The hero canvas covers a whole band; cap the pixel count so large screens stay smooth.
+      var budget = 1800000;
+      var area = rect.width * rect.height * dpr * dpr;
+      if (area > budget) dpr = dpr * Math.sqrt(budget / area);
       var width = Math.max(1, Math.round(rect.width * dpr));
       var height = Math.max(1, Math.round(rect.height * dpr));
       if (canvas.width !== width || canvas.height !== height) {
