@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import fallback from "../src/release-fallback.json" with { type: "json" };
 
 const store = new Map();
 globalThis.caches = {
@@ -93,7 +94,7 @@ test("falls back to the checked-in manifest when GitHub fails", async () => {
   try {
     const response = await call("/download/windows");
     assert.equal(response.status, 302);
-    assert.equal(response.headers.get("Location").startsWith("https://github.com/konethegreat/agentos-studio/releases/download/v0.13.0/"), true);
+    assert.equal(response.headers.get("Location"), fallback.assets.windows.url, "the fallback is whatever sync:release checked in");
   } finally {
     globalThis.fetch = original;
   }

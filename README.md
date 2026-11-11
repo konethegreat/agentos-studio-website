@@ -4,8 +4,9 @@ The download site for [AgentOS Studio](https://github.com/konethegreat/agentos-s
 Worker serves static pages and resolves `/download/<os>` to the installers on the latest GitHub
 release.
 
-Status: **preview**. The site runs locally and has no public deployment yet. Deploying needs the
-owner's Cloudflare credentials, which are not in this repository and never will be.
+Status: **live** at https://agentos-studio-website.erictshivhinda.workers.dev (first deploy
+2026-11-11). Deploying uses the owner's Wrangler login on his machine; no credential is in this
+repository and none ever will be.
 
 Authors: **Kone Tshivhinda** and **K-ONE IT SOLUTIONS**, Johannesburg. Every page carries both names
 in the footer and in its author metadata.

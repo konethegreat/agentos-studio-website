@@ -12,6 +12,8 @@ const failures = [];
 
 const TEXT_EXTENSIONS = new Set([".html", ".css", ".js", ".mjs", ".json", ".md", ".yml", ".yaml", ".txt", ".svg"]);
 const SKIP_DIRS = new Set(["node_modules", ".git", ".wrangler", ".wrangler-dry", "docs"]);
+// Agent rule files quote the banned markers in order to ban them; they are not site content.
+const SKIP_FILES = new Set(["AGENTS.md", "CLAUDE.md", "GEMINI.md"]);
 
 async function walk(dir) {
   const entries = await readdir(dir, { withFileTypes: true });
@@ -54,6 +56,7 @@ const placeholderPattern = new RegExp(
 const files = await walk(root);
 for (const file of files) {
   if (!TEXT_EXTENSIONS.has(path.extname(file).toLowerCase())) continue;
+  if (SKIP_FILES.has(path.basename(file)) && path.dirname(file) === root) continue;
   const text = await readFile(file, "utf8");
   if (/[\u2013\u2014]/.test(text)) fail(file, "contains an en or em dash");
   if (placeholderPattern.test(text)) fail(file, "contains a placeholder marker");
