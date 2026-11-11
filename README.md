@@ -14,7 +14,10 @@ in the footer and in its author metadata.
 ## Stack
 
 - Cloudflare Workers with static assets (`wrangler.jsonc`), no framework and no build step.
-- Plain HTML, CSS and two small browser scripts.
+- Plain HTML, CSS and two small browser scripts: `public/app.js` (OS detection, release data, the
+  ported UI Vault interactions, setup guide progress) and `public/nebula.js` (the WebGL hero).
+- App screenshots live in `public/assets/screens/` as WebP. UI Vault and Magic UI components are
+  credited on `/credits/`; only MIT entries are reused.
 - Worker entry: `worker/src/index.js`. Release mapping and tests: `worker/src/map.js`.
 - Node 22 or newer for tests and tooling. Wrangler 4 for local preview and deploy.
 
@@ -22,7 +25,8 @@ in the footer and in its author metadata.
 
 | Path | File | Purpose |
 | --- | --- | --- |
-| `/` | `public/index.html` | What AgentOS Studio is, three surfaces, mission flow, install path |
+| `/` | `public/index.html` | Nebula hero, feature cards, app screenshots, mission flow, OS-detecting download section, setup path |
+| `/setup/` | `public/setup/index.html` | Step by step guide for non-technical users on Windows, macOS and Linux: download, installer prompts, first launch, Setup screen (1.0 and 1.1), sign-ins, first chat and goal, troubleshooting |
 | `/download/` | `public/download/index.html` | Installers per platform, unsigned build steps, requirements |
 | `/privacy/` | `public/privacy/index.html` | What this site collects (nothing) and what Cloudflare sees |
 | `/credits/` | `public/credits/index.html` | Authorship, UI Vault components, fonts, what is not copied |

@@ -22,11 +22,11 @@
       </a>
       <nav class="site-nav" aria-label="Main">
         <a href="/download/">Download</a>
-        <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/GETTING-STARTED.md">Docs</a>
-        <a href="https://github.com/konethegreat/agentos-studio">GitHub</a>
-        <a href="/privacy/">Privacy</a>
+        <a href="/setup/">Setup guide</a>
+        <a class="nav-wide" href="https://github.com/konethegreat/agentos-studio/blob/main/docs/GETTING-STARTED.md">Docs</a>
+        <a class="nav-wide" href="https://github.com/konethegreat/agentos-studio">GitHub</a>
       </nav>
-      <a class="ui-button ui-button--sm header-cta" href="/download/">Get the app</a>
+      <a class="ui-button ui-button--sm header-cta" href="/download/" data-download><span data-download-label>Get the app</span></a>
     </div>
   </header>
 
@@ -35,35 +35,106 @@
       <div class="wrap">
         <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Credits</p>
         <h1>Who made this, and what it borrows.</h1>
-        <p class="lede">This site is original work except for two patterns from the UI Vault library and the fonts. Both are credited here and in the page footer.</p>
+        <p class="lede">This site is original work by Kone Tshivhinda and K-ONE IT SOLUTIONS, built from components in the UI Vault. Every reused component is named here with its author and license.</p>
       </div>
     </section>
 
     <section class="wrap prose">
       <h2>Authorship</h2>
-      <p>Designed and built by <strong>Kone Tshivhinda</strong> for <strong>K-ONE IT SOLUTIONS</strong>, Johannesburg, South Africa. AgentOS Studio itself is MIT licensed and lives at <a href="https://github.com/konethegreat/agentos-studio">github.com/konethegreat/agentos-studio</a>.</p>
+      <p>Designed and built by <strong>Kone Tshivhinda</strong> for <strong>K-ONE IT SOLUTIONS</strong>, Johannesburg, South Africa. AgentOS Studio itself is MIT licensed and lives at <a href="https://github.com/konethegreat/agentos-studio">github.com/konethegreat/agentos-studio</a>. The app screenshots are from AgentOS Studio 1.0.</p>
 
       <h2>UI Vault library components</h2>
-      <p>Two patterns come from the <a href="https://github.com/konethegreat/ui-vault">UI Vault</a>, a provenance-first reference library. Its <code>library/</code> tier is original work by Kone Tshivhinda under the MIT license, which allows reuse with attribution.</p>
-
+      <p>These come from the <code>library/</code> tier of the <a href="https://github.com/konethegreat/ui-vault">UI Vault</a> (<a href="https://konethegreat.github.io/ui-vault/demos">live demos</a>), original work by Kone Tshivhinda under the MIT license.</p>
       <div class="credit-block">
         <p><strong>Button</strong> by Kone Tshivhinda, MIT. Source: <a href="https://github.com/konethegreat/ui-vault/tree/main/library/button">library/button</a>.</p>
-        <p>The CSS custom properties and class names are reused, with the palette re-themed to paper, ink and cornflower. The React wrapper is not used here because this site has no React runtime.</p>
+        <p>The CSS custom properties and class names are reused, re-themed to paper, ink and cornflower. The React wrapper is not used because this site has no React runtime.</p>
       </div>
-
       <div class="credit-block">
         <p><strong>Nebula Hero</strong> by Kone Tshivhinda, MIT. Source: <a href="https://github.com/konethegreat/ui-vault/tree/main/library/nebula-hero">library/nebula-hero</a>.</p>
-        <p>The WebGL2 shader and its loop are ported from the React component to a plain module, with the warm palette replaced by cornflower and ink. Reduced motion still renders a single static frame, and the loop still pauses offscreen. Visual direction is inspired by <a href="https://www.shadertoy.com/view/XlfGRj">Star Nest by Pablo Roman Andrioli</a> and the shader adaptation credited to Matthias Hurrle (@atzedent); no shader code was copied from either.</p>
+        <p>The WebGL2 shader and its loop are ported from React to a plain module behind the home page hero and the setup guide header, re-coloured to cornflower and ink, with a pixel budget for large screens. Reduced motion renders one still frame, and the loop pauses offscreen. Visual direction is inspired by <a href="https://www.shadertoy.com/view/XlfGRj">Star Nest by Pablo Roman Andrioli</a> and the shader adaptation credited to Matthias Hurrle (@atzedent); no shader code was copied from either.</p>
       </div>
+      <div class="credit-block">
+        <p><strong>Spotlight Glow Card</strong> by Kone Tshivhinda, MIT. Source: <a href="https://github.com/konethegreat/ui-vault/tree/main/library/spotlight-glow-card">library/spotlight-glow-card</a>.</p>
+        <p>The feature cards on the home page and the sign-in cards in the setup guide. The pointer-tracking border glow is ported from React to a few lines of plain JavaScript and re-toned to cornflower, signal and bone. Touch screens get a still glow instead.</p>
+      </div>
+      <div class="credit-block">
+        <p><strong>Editorial Image Accordion</strong> by Kone Tshivhinda, MIT. Source: <a href="https://github.com/konethegreat/ui-vault/tree/main/library/editorial-image-accordion">library/editorial-image-accordion</a>.</p>
+        <p>The app screenshot accordion on the home page, ported from React to a plain module. It keeps the keyboard tab pattern (arrow keys, Home and End) and stacks vertically on phones.</p>
+      </div>
+
+      <h2>Magic UI components</h2>
+      <p>These four are catalogued in the UI Vault's <code>references/</code> tier with a verified MIT license from <a href="https://github.com/magicuidesign/magicui">Magic UI</a>. They were rewritten for this site in plain CSS and JavaScript; the license below covers the parts that came from them.</p>
+      <div class="credit-block">
+        <p><strong>Marquee</strong> by Magic UI (magicuidesign), MIT. Catalogued in the UI Vault at <a href="https://github.com/konethegreat/ui-vault/tree/main/references/marquee">references/marquee</a>; original at <a href="https://magicui.design/docs/components/marquee">magicui.design</a>.</p>
+        <p>The scrolling row of tools in the home page hero, ported from Tailwind keyframes to plain CSS. It pauses on hover and stands still with reduced motion.</p>
+      </div>
+      <div class="credit-block">
+        <p><strong>Number Ticker</strong> by Magic UI (magicuidesign), MIT. Catalogued in the UI Vault at <a href="https://github.com/konethegreat/ui-vault/tree/main/references/number-ticker">references/number-ticker</a>; original at <a href="https://magicui.design/docs/components/number-ticker">magicui.design</a>.</p>
+        <p>The counters under the hero, ported from a Motion spring to a small requestAnimationFrame loop. Reduced motion shows the final number at once.</p>
+      </div>
+      <div class="credit-block">
+        <p><strong>Animated Shiny Text</strong> by Magic UI (magicuidesign), MIT. Catalogued in the UI Vault at <a href="https://github.com/konethegreat/ui-vault/tree/main/references/animated-shiny-text">references/animated-shiny-text</a>; original at <a href="https://magicui.design/docs/components/animated-shiny-text">magicui.design</a>.</p>
+        <p>The shine on the badge above the home page headline, ported from Tailwind classes to plain CSS.</p>
+      </div>
+      <div class="credit-block">
+        <p><strong>Dot Pattern</strong> by Magic UI (magicuidesign), MIT. Catalogued in the UI Vault at <a href="https://github.com/konethegreat/ui-vault/tree/main/references/dot-pattern">references/dot-pattern</a>; original at <a href="https://magicui.design/docs/components/dot-pattern">magicui.design</a>.</p>
+        <p>The dotted backgrounds behind several sections, reduced to a static SVG pattern.</p>
+      </div>
+
+      <h2>License texts</h2>
+      <h3>UI Vault</h3>
+      <p class="license-text">MIT License
+
+Copyright (c) 2026 Kone
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+      <h3>Magic UI</h3>
+      <p class="license-text">MIT License
+
+Copyright (c) Magic UI
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
 
       <h2>Fonts</h2>
       <p>Instrument Serif, Geist and Geist Mono are self-hosted from this domain and licensed under the <a href="https://openfontlicense.org">SIL Open Font License 1.1</a>. The full license text ships at <a href="/fonts/OFL.txt">/fonts/OFL.txt</a>.</p>
 
       <h2>What is not here</h2>
-      <p>No component from the UI Vault's <code>references/</code> tier is copied into this site. That tier includes work with other licenses and authors, and it stays in the vault as documentation. If a reference is added later, its author and license will be named here before the code is published.</p>
+      <p>Nothing from the UI Vault that is link-only or lacks a permissive license is copied into this site. Those entries stay in the vault as references. If one is added later, its author and license will be named here before the code is published.</p>
 
       <h2>License of this site</h2>
-      <p>The site code is MIT licensed. The AgentOS Studio name and the K-ONE IT SOLUTIONS name belong to their owner. Trademarks of Microsoft, Apple, GitHub and Cloudflare belong to their owners; they are named to describe the software, not to imply endorsement.</p>
+      <p>The site code is MIT licensed. The AgentOS Studio name and the K-ONE IT SOLUTIONS name belong to their owner. Trademarks of Microsoft, Apple, Anthropic, GitHub, OpenRouter and Cloudflare belong to their owners; they are named to describe the software, not to imply endorsement.</p>
     </section>
   </main>
 
@@ -75,16 +146,18 @@
       </div>
       <nav aria-label="Footer">
         <a href="/download/">Download</a>
+        <a href="/setup/">Setup guide</a>
         <a href="https://github.com/konethegreat/agentos-studio">Repository</a>
         <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/INSTALL.md">Install notes</a>
+        <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/TROUBLESHOOTING.md">Troubleshooting</a>
         <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/PRIVACY.md">App privacy</a>
         <a href="/privacy/">Site privacy</a>
         <a href="/credits/">Credits</a>
       </nav>
     </div>
     <div class="wrap footer-legal">
-      <p>Copyright 2026 K-ONE IT SOLUTIONS. AgentOS Studio is MIT licensed.</p>
-      <p>UI Vault components by <a href="https://github.com/konethegreat/ui-vault">Kone Tshivhinda</a>, MIT. Fonts under the SIL Open Font License.</p>
+      <p>Copyright 2026 Kone Tshivhinda and K-ONE IT SOLUTIONS. AgentOS Studio is MIT licensed.</p>
+      <p>UI Vault components by <a href="https://github.com/konethegreat/ui-vault">Kone Tshivhinda</a> and Magic UI, MIT. Fonts under the SIL Open Font License. <a href="/credits/">Full credits</a>.</p>
     </div>
   </footer>
   <script src="/app.js" defer></script>

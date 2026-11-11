@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AgentOS Studio: one desk for every coding agent</title>
-  <meta name="description" content="AgentOS Studio is a native desktop control plane for Hermes, Claude Code, Qoder and Antigravity: one memory, one mission queue and one review gate. Download for Windows, macOS and Linux.">
+  <meta name="description" content="AgentOS Studio is a free desktop app that runs Hermes, Claude Code, Qoder and Antigravity from one memory, one mission queue and one review gate. Download for Windows, macOS and Linux, with a step by step setup guide.">
   <meta name="author" content="Kone Tshivhinda and K-ONE IT SOLUTIONS">
-  <meta name="theme-color" content="#f4f1ea">
+  <meta name="theme-color" content="#0b0e15">
   <meta property="og:title" content="AgentOS Studio: one desk for every coding agent">
-  <meta property="og:description" content="One memory, one mission queue and one review gate for Hermes, Claude Code, Qoder and Antigravity. Free, MIT licensed, local-first.">
+  <meta property="og:description" content="AgentOS Studio is a free desktop app that runs Hermes, Claude Code, Qoder and Antigravity from one memory, one mission queue and one review gate. Download for Windows, macOS and Linux, with a step by step setup guide.">
   <meta property="og:type" content="website">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
@@ -25,159 +25,299 @@
       </a>
       <nav class="site-nav" aria-label="Main">
         <a href="/download/">Download</a>
-        <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/GETTING-STARTED.md">Docs</a>
-        <a href="https://github.com/konethegreat/agentos-studio">GitHub</a>
-        <a href="/privacy/">Privacy</a>
+        <a href="/setup/">Setup guide</a>
+        <a class="nav-wide" href="https://github.com/konethegreat/agentos-studio/blob/main/docs/GETTING-STARTED.md">Docs</a>
+        <a class="nav-wide" href="https://github.com/konethegreat/agentos-studio">GitHub</a>
       </nav>
-      <a class="ui-button ui-button--sm header-cta" href="/download/">Get the app</a>
+      <a class="ui-button ui-button--sm header-cta" href="/download/" data-download><span data-download-label>Get the app</span></a>
     </div>
   </header>
 
   <main id="main">
     <section class="hero">
+      <canvas class="hero-canvas" data-nebula aria-hidden="true"></canvas>
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="dot" aria-hidden="true"></span>v0.13.0 · Windows, macOS, Linux</p>
+          <a class="shiny-badge" href="/setup/"><span class="tag">New</span><span class="shiny-text">A setup guide anyone can follow</span></a>
           <h1>One desk for <em>every</em> coding agent.</h1>
-          <p class="lede">Hermes, Claude Code, Qoder and Antigravity work from one memory, one mission queue and one review gate. AgentOS Studio is the native control plane that keeps them on the same job.</p>
+          <p class="lede">Hermes, Claude Code, Qoder and Antigravity work from one memory, one mission queue and one review gate. You say what done looks like; AgentOS Studio keeps every agent on the same job.</p>
           <div class="hero-actions">
-            <a class="ui-button ui-button--lg" id="primary-download" href="/download/" data-download>Download AgentOS Studio</a>
-            <a class="ui-button ui-button--lg ui-button--secondary" href="#how">See how it works</a>
+            <a class="ui-button ui-button--lg ui-button--cornflower" href="/download/" data-download><span data-download-label>Download AgentOS Studio</span></a>
+            <a class="ui-button ui-button--lg ui-button--quiet-on-ink" href="/setup/">Read the setup guide</a>
           </div>
-          <p class="hero-note">Free and MIT licensed. No account. Builds are unsigned, so the first launch asks you to confirm. <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/INSTALL.md">What you will see</a>.</p>
+          <p class="hero-meta"><span>Version <b class="js-version">1.0.0</b></span><span>Windows, macOS, Linux</span><span>Free and MIT licensed</span></p>
         </div>
-
-        <div class="hero-panel" aria-label="Sample mission receipt">
-          <canvas class="panel-canvas" data-nebula aria-hidden="true"></canvas>
-          <div class="panel-veil" aria-hidden="true"></div>
-          <div class="panel-top"><span>example mission</span><span class="panel-status">merged</span></div>
-          <p class="panel-caption">step by step</p>
-          <div class="receipt">
-            <p class="receipt-title">Harden the export path</p>
-            <p class="receipt-sub">agentos-studio · reviewed diff</p>
-            <ul class="receipt-steps">
-              <li><span>Plan</span><span>acceptance criteria</span></li>
-              <li><span>Worktree</span><span class="ok">isolated copy</span></li>
-              <li><span>Review</span><span class="ok">second agent approved</span></li>
-              <li><span>Merge</span><span class="ok">squash, one commit</span></li>
-              <li><span>Verify</span><span class="ok">checks green</span></li>
+        <div class="hero-stage" data-tilt>
+          <div class="app-window">
+            <div class="app-window-bar"><i></i><i></i><i></i><span>AgentOS Studio, Agents</span></div>
+            <img src="/assets/screens/studio-agents-v1.webp" width="1440" height="874" alt="AgentOS Studio showing four agents, Hermes, Claude Code, Antigravity and Qoder, with their status, cost model and remaining quota" fetchpriority="high">
+          </div>
+          <p class="float-chip float-chip--a"><span class="pulse" aria-hidden="true"></span><b>Review approved</b> by a second agent</p>
+          <p class="float-chip float-chip--b"><span class="pulse" aria-hidden="true"></span><b>4 agents</b> ready</p>
+        </div>
+      </div>
+      <div class="marquee-band">
+        <p class="marquee-label">Works with the tools you already have</p>
+        <div class="wrap">
+          <div class="marquee">
+            <ul class="marquee-track">
+              <li class="marquee-item">Hermes</li>
+              <li class="marquee-item">Claude Code</li>
+              <li class="marquee-item">Qoder</li>
+              <li class="marquee-item">Antigravity</li>
+              <li class="marquee-item">Obsidian vault</li>
+              <li class="marquee-item">GitHub</li>
+              <li class="marquee-item">Notion</li>
+              <li class="marquee-item">OpenRouter</li>
+              <li class="marquee-item">Claude Desktop</li>
+              <li class="marquee-item">Cursor</li>
+              <li class="marquee-item">VS Code</li>
+              <li class="marquee-item">Windsurf</li>
+              <li class="marquee-item">Codex</li>
             </ul>
-            <p class="receipt-foot">Every line stays traceable to the goal, the agent, the model and the review.</p>
+            <ul class="marquee-track" aria-hidden="true">
+              <li class="marquee-item">Hermes</li>
+              <li class="marquee-item">Claude Code</li>
+              <li class="marquee-item">Qoder</li>
+              <li class="marquee-item">Antigravity</li>
+              <li class="marquee-item">Obsidian vault</li>
+              <li class="marquee-item">GitHub</li>
+              <li class="marquee-item">Notion</li>
+              <li class="marquee-item">OpenRouter</li>
+              <li class="marquee-item">Claude Desktop</li>
+              <li class="marquee-item">Cursor</li>
+              <li class="marquee-item">VS Code</li>
+              <li class="marquee-item">Windsurf</li>
+              <li class="marquee-item">Codex</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="band" id="how">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="section-num">01 / SURFACES</p>
-          <h2>Chat, missions and memory in the same window.</h2>
-          <p class="section-lede">No terminals to wire together and no prompts to copy between tools. The agents you already use keep their own accounts and their own models; Studio gives them a shared desk.</p>
+    <section class="wrap stats" aria-label="AgentOS Studio in numbers">
+      <div class="stat"><span class="stat-value" data-ticker="4">4</span><span class="stat-label">coding agents on one task bus</span></div>
+      <div class="stat"><span class="stat-value" data-ticker="13">13</span><span class="stat-label">shared hub tools every agent can call</span></div>
+      <div class="stat"><span class="stat-value" data-ticker="7">7</span><span class="stat-label">installers for Windows, macOS and Linux</span></div>
+      <div class="stat"><span class="stat-value" data-ticker="0">0</span><span class="stat-label">trackers, accounts or telemetry</span></div>
+    </section>
+
+    <section class="band band--night" id="how">
+      <svg class="dot-field dot-field--night" aria-hidden="true" focusable="false"><defs><pattern id="dots-how" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="currentColor"/></pattern></defs><rect width="100%" height="100%" fill="url(#dots-how)"/></svg>
+      <div class="wrap layer">
+        <div class="section-head" data-reveal>
+          <p class="kicker">What it does</p>
+          <h2>Chat, goals and memory in <em>one window</em>.</h2>
+          <p class="section-lede">No terminals to wire together and no prompts to copy between tools. The agents keep their own accounts and models; Studio gives them a shared desk and a way to finish work.</p>
         </div>
-        <div class="feature-grid">
-          <article class="feature">
-            <p class="feature-kicker">Chat</p>
-            <h3>Talk to the agent you already pay for.</h3>
-            <p>Open a folder, pick Hermes, Claude Code, Qoder or Antigravity, and talk. Replies stream in with rendered Markdown, and every tool call appears as a card you can open.</p>
+        <div class="card-grid" data-reveal>
+          <article class="spotlight-card" data-tone="cornflower" tabindex="0">
+            <div class="spotlight-card__top"><span class="spotlight-card__eyebrow">Chat</span><span class="spotlight-card__dot" aria-hidden="true"></span></div>
+            <h3 class="spotlight-card__title">Talk to the agent you already pay for.</h3>
+            <p class="spotlight-card__description">Pick a folder, pick Hermes or Claude Code, and type. Replies stream with every tool call shown as a card you can open.</p>
+            <p class="spotlight-card__meta">Chat tab</p>
           </article>
-          <article class="feature">
-            <p class="feature-kicker">Missions</p>
-            <h3>Give work a definition of done.</h3>
-            <p>Point an agent at a repository, state the goal and the acceptance criteria. Studio creates an isolated worktree, runs the mission and keeps the diff for review.</p>
+          <article class="spotlight-card" data-tone="signal" tabindex="0">
+            <div class="spotlight-card__top"><span class="spotlight-card__eyebrow">Goals</span><span class="spotlight-card__dot" aria-hidden="true"></span></div>
+            <h3 class="spotlight-card__title">Say what done looks like.</h3>
+            <p class="spotlight-card__description">Write the outcome in one sentence and how to check it. Hermes plans the missions, agents do them, the checks run at the end.</p>
+            <p class="spotlight-card__meta">Work, then Goals</p>
           </article>
-          <article class="feature">
-            <p class="feature-kicker">Memory</p>
-            <h3>Your notes, in a folder you own.</h3>
-            <p>Every agent reads the same vault of Markdown files. Recall is ranked, decisions get recorded, and nothing is hidden in a store you cannot open.</p>
+          <article class="spotlight-card" data-tone="bone" tabindex="0">
+            <div class="spotlight-card__top"><span class="spotlight-card__eyebrow">Review gate</span><span class="spotlight-card__dot" aria-hidden="true"></span></div>
+            <h3 class="spotlight-card__title">Nothing merges unread.</h3>
+            <p class="spotlight-card__description">A second agent reviews every pull request. CI must be green and the budget intact before anything lands.</p>
+            <p class="spotlight-card__meta">Mission Control</p>
+          </article>
+          <article class="spotlight-card" data-tone="cornflower" tabindex="0">
+            <div class="spotlight-card__top"><span class="spotlight-card__eyebrow">Memory</span><span class="spotlight-card__dot" aria-hidden="true"></span></div>
+            <h3 class="spotlight-card__title">One brain, in a folder you own.</h3>
+            <p class="spotlight-card__description">Every agent reads the same Obsidian vault of Markdown notes. Recall is ranked and decisions are recorded.</p>
+            <p class="spotlight-card__meta">Brain tab</p>
+          </article>
+          <article class="spotlight-card" data-tone="signal" tabindex="0">
+            <div class="spotlight-card__top"><span class="spotlight-card__eyebrow">Agents</span><span class="spotlight-card__dot" aria-hidden="true"></span></div>
+            <h3 class="spotlight-card__title">Four agents, one desk.</h3>
+            <p class="spotlight-card__description">Hermes, Claude Code, Qoder and Antigravity share one task bus and can hand work or a question to each other.</p>
+            <p class="spotlight-card__meta">Work, then Agents</p>
+          </article>
+          <article class="spotlight-card" data-tone="bone" tabindex="0">
+            <div class="spotlight-card__top"><span class="spotlight-card__eyebrow">Setup</span><span class="spotlight-card__dot" aria-hidden="true"></span></div>
+            <h3 class="spotlight-card__title">The app installs its own tools.</h3>
+            <p class="spotlight-card__description">Setup checks the machine, installs what is missing and opens the sign-ins. You click; it does the typing.</p>
+            <p class="spotlight-card__meta">System, then Setup</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="band band--ink">
+    <section class="band" id="screens">
       <div class="wrap">
-        <div class="section-head">
-          <p class="section-num">02 / MISSIONS</p>
-          <h2>A mission ends in a reviewed merge, not a transcript.</h2>
-          <p class="section-lede">The difference between a useful agent and a fleet is what happens after the code is written. Studio makes the end of a mission a decision, not a summary.</p>
+        <div class="section-head" data-reveal>
+          <p class="kicker">Inside the app</p>
+          <h2>See it before you <em>install it</em>.</h2>
+          <p class="section-lede">Real screens from AgentOS Studio 1.0. Hover or tap a panel to open it.</p>
         </div>
-        <div class="flow">
-          <div class="flow-row">
-            <span class="flow-index">01</span>
-            <h3>The goal becomes a definition of done.</h3>
-            <p>The mission records what finished means: the repository, the criteria, the checks. The agent plans against that, not against a chat message.</p>
+        <div class="eia" data-eia>
+          <div class="eia__list" role="tablist" aria-label="App screens">
+            <button class="eia__tab" type="button" role="tab" aria-selected="true" data-title="Today: what needs you" data-text="Questions waiting on you, goals in progress, running agents, metered spend and the last digest, on one screen when you open the app.">
+              <img class="eia__image" src="/assets/screens/studio-today-v1.webp" width="1440" height="844" alt="AgentOS Studio Today screen" loading="lazy" decoding="async">
+              <span class="eia__scrim" aria-hidden="true"></span>
+              <span class="eia__label">Today</span>
+            </button>
+            <button class="eia__tab" type="button" role="tab" aria-selected="false" data-title="Agents: who can take work" data-text="Each agent shows whether it is ready, how it starts, what it costs, how much quota is left and what it is good at.">
+              <img class="eia__image" src="/assets/screens/studio-agents-v1.webp" width="1440" height="874" alt="AgentOS Studio Agents screen" loading="lazy" decoding="async">
+              <span class="eia__scrim" aria-hidden="true"></span>
+              <span class="eia__label">Agents</span>
+            </button>
+            <button class="eia__tab" type="button" role="tab" aria-selected="false" data-title="Run timeline: what happened" data-text="Every step of a mission in order: the task claimed, the tools used, the pull request opened, the review and the result.">
+              <img class="eia__image" src="/assets/screens/studio-timeline-v1.webp" width="1440" height="874" alt="AgentOS Studio Timeline screen" loading="lazy" decoding="async">
+              <span class="eia__scrim" aria-hidden="true"></span>
+              <span class="eia__label">Timeline</span>
+            </button>
           </div>
-          <div class="flow-row">
-            <span class="flow-index">02</span>
-            <h3>Work happens in an isolated worktree.</h3>
-            <p>Each mission gets its own copy of the repository, so two agents cannot step on each other and your working tree stays yours.</p>
-          </div>
-          <div class="flow-row">
-            <span class="flow-index">03</span>
-            <h3>A second agent reviews the diff.</h3>
-            <p>The reviewer opens the pull request, reads the change and either approves it or sends it back with findings. The agent that wrote the code does not grade its own work.</p>
-          </div>
-          <div class="flow-row">
-            <span class="flow-index">04</span>
-            <h3>The merge is squashed and checked.</h3>
-            <p>Approved work lands as one commit with the evidence attached. Checks run before the merge, and the result is recorded on the mission.</p>
+          <div class="eia__caption" aria-live="polite">
+            <span class="eia__index">01 / 03</span>
+            <p class="eia__title">Today: what needs you</p>
+            <p class="eia__text">Questions waiting on you, goals in progress, running agents, metered spend and the last digest, on one screen when you open the app.</p>
           </div>
         </div>
-        <p class="flow-note"><strong>Review gate</strong> lives in the app, not in a prompt.</p>
       </div>
     </section>
 
-    <section class="band">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="section-num">03 / PLATFORM</p>
-          <h2>Built local-first, in Rust.</h2>
-          <p class="section-lede">One native binary is the desktop app and the shared MCP bus. Your chats, keys and notes stay on your machine unless you connect a service yourself.</p>
+    <section class="band band--deep">
+      <svg class="dot-field" aria-hidden="true" focusable="false"><defs><pattern id="dots-flow" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="currentColor"/></pattern></defs><rect width="100%" height="100%" fill="url(#dots-flow)"/></svg>
+      <div class="wrap layer">
+        <div class="section-head" data-reveal>
+          <p class="kicker">How work gets done</p>
+          <h2>A goal ends in a <em>reviewed merge</em>, not a transcript.</h2>
         </div>
-        <dl class="spec">
-          <div><dt>Runtime</dt><dd>Tauri v2 with a Rust core</dd></div>
-          <div><dt>Interface</dt><dd>React 19 and TypeScript</dd></div>
-          <div><dt>Hub</dt><dd>The same binary runs <code>agentos-hub</code>: 13 MCP tools over JSON-RPC 2.0 on stdio</dd></div>
-          <div><dt>Memory</dt><dd>Markdown notes in a vault folder you choose</dd></div>
-          <div><dt>Data</dt><dd><code>%APPDATA%\agentos-studio</code> on Windows, <code>~/Library/Application Support/agentos-studio</code> on macOS, <code>~/.config/agentos-studio</code> on Linux</dd></div>
-          <div><dt>Network</dt><dd>Update checks, GitHub, your model provider, and Notion only if you connect it</dd></div>
-          <div><dt>Telemetry</dt><dd>None</dd></div>
-          <div><dt>License</dt><dd>MIT</dd></div>
-        </dl>
+        <div class="flow" data-reveal>
+          <div class="flow-step"><h3>Say what done means.</h3><p>One sentence for the outcome, plus a check: a command, a web address or a file that must exist.</p></div>
+          <div class="flow-step"><h3>Hermes plans it.</h3><p>The goal becomes missions, each with a repository, criteria and a budget.</p></div>
+          <div class="flow-step"><h3>Agents work apart.</h3><p>Every mission runs in its own copy of the code, so your folder stays yours.</p></div>
+          <div class="flow-step"><h3>A second agent reviews.</h3><p>Approved work merges as one commit; then the checks run on the result.</p></div>
+        </div>
       </div>
     </section>
 
-    <section class="band band--ink">
-      <div class="wrap install-grid">
-        <div>
-          <p class="section-num section-num--inline">04 / INSTALL</p>
-          <h2 class="install-title">Install it honestly.</h2>
-          <p class="section-lede">Builds are not signed with a paid certificate, so Windows SmartScreen and macOS Gatekeeper ask once. The install notes show the exact dialog and what to click. Nothing asks you to weaken a security setting.</p>
-          <div class="install-actions">
-            <a class="ui-button ui-button--on-ink" href="/download/">Download v0.13.0</a>
-            <a class="ui-button ui-button--quiet-on-ink" href="https://github.com/konethegreat/agentos-studio/blob/main/docs/INSTALL.md">Read the install notes</a>
-          </div>
-          <p class="install-note">Every release is published on GitHub with the installers and their signatures. The app updates itself through a signed updater.</p>
+    <section class="band band--night" id="download">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <p class="kicker">Download</p>
+          <h2>Get it for <em><span data-os-name>your computer</span></em>.</h2>
+          <p class="section-lede">The site checks which system you are on and picks the file. Every link goes straight to the latest release on GitHub.</p>
         </div>
-        <ul class="install-list">
-          <li><span>01</span><span><strong>Download</strong> the installer for your platform.</span></li>
-          <li><span>02</span><span><strong>Windows:</strong> More info, then Run anyway. <strong>macOS:</strong> Open Anyway in Privacy and Security.</span></li>
-          <li><span>03</span><span><strong>Start Studio</strong>, open Setup and press Auto-Setup and Repair Everything.</span></li>
-          <li><span>04</span><span><strong>Pick a vault.</strong> On a machine with no vault, the first launch creates one in Documents.</span></li>
-        </ul>
+        <div class="os-switch" data-os-switch hidden>
+          <span>Show steps for</span>
+          <div class="os-tablist" role="group" aria-label="Operating system">
+            <button class="os-tab" type="button" data-pick="windows" aria-pressed="false">Windows<span class="here">this device</span></button>
+            <button class="os-tab" type="button" data-pick="macos" aria-pressed="false">macOS<span class="here">this device</span></button>
+            <button class="os-tab" type="button" data-pick="linux" aria-pressed="false">Linux<span class="here">this device</span></button>
+          </div>
+        </div>
+        <div class="os-panels">
+          <div class="download-hero" data-for="windows">
+            <div class="download-panel">
+              <p class="os-label">Windows</p>
+              <p class="kicker">Windows 10 and 11</p>
+              <h3>AgentOS Studio for Windows</h3>
+              <p>Version <span class="js-version">1.0.0</span>. Free, MIT licensed, no account needed.</p>
+              <div class="hero-actions">
+                <a class="ui-button ui-button--lg ui-button--cornflower" href="/download/windows">Download for Windows <span class="asset-size" data-size="windows"></span></a>
+              </div>
+              <ul class="asset-list asset-list--night">
+                  <li><a href="/download/windows"><span class="asset-name">Setup, per user (pick this one)</span><span class="asset-size" data-size="windows"></span></a></li>
+                  <li><a href="/download/windows-msi"><span class="asset-name">MSI, for managed installs</span><span class="asset-size" data-size="windows-msi"></span></a></li>
+              </ul>
+            </div>
+            <ol class="download-steps">
+                  <li><span>01</span><span><strong>Download</strong> the setup file. It is about 6 MB.</span></li>
+                  <li><span>02</span><span><strong>Open it.</strong> Windows shows a blue <em>Windows protected your PC</em> box: click <strong>More info</strong>, then <strong>Run anyway</strong>.</span></li>
+                  <li><span>03</span><span><strong>Open AgentOS Studio</strong> from the Start menu and go to <strong>Setup</strong>.</span></li>
+            </ol>
+          </div>
+          <div class="download-hero" data-for="macos">
+            <div class="download-panel">
+              <p class="os-label">macOS</p>
+              <p class="kicker">macOS 11 and later</p>
+              <h3>AgentOS Studio for macOS</h3>
+              <p>Version <span class="js-version">1.0.0</span>. Free, MIT licensed, no account needed.</p>
+              <div class="hero-actions">
+                <a class="ui-button ui-button--lg ui-button--cornflower" href="/download/macos-arm64">Download for macOS <span class="asset-size" data-size="macos-arm64"></span></a>
+              </div>
+              <ul class="asset-list asset-list--night">
+                  <li><a href="/download/macos-arm64"><span class="asset-name">Apple Silicon (M1 and later)</span><span class="asset-size" data-size="macos-arm64"></span></a></li>
+                  <li><a href="/download/macos-x64"><span class="asset-name">Intel Macs</span><span class="asset-size" data-size="macos-x64"></span></a></li>
+              </ul>
+            </div>
+            <ol class="download-steps">
+                  <li><span>01</span><span><strong>Download</strong> the DMG. Most Macs from 2020 on are Apple Silicon; Intel is in the list.</span></li>
+                  <li><span>02</span><span><strong>Drag</strong> AgentOS Studio into Applications.</span></li>
+                  <li><span>03</span><span><strong>Right-click</strong> the app, choose <strong>Open</strong>, then <strong>Open</strong> again. macOS asks only the first time.</span></li>
+            </ol>
+          </div>
+          <div class="download-hero" data-for="linux">
+            <div class="download-panel">
+              <p class="os-label">Linux</p>
+              <p class="kicker">Linux, x64</p>
+              <h3>AgentOS Studio for Linux</h3>
+              <p>Version <span class="js-version">1.0.0</span>. Free, MIT licensed, no account needed.</p>
+              <div class="hero-actions">
+                <a class="ui-button ui-button--lg ui-button--cornflower" href="/download/linux-appimage">Download for Linux <span class="asset-size" data-size="linux-appimage"></span></a>
+              </div>
+              <ul class="asset-list asset-list--night">
+                  <li><a href="/download/linux-appimage"><span class="asset-name">AppImage, runs anywhere</span><span class="asset-size" data-size="linux-appimage"></span></a></li>
+                  <li><a href="/download/linux-deb"><span class="asset-name">.deb, Debian and Ubuntu</span><span class="asset-size" data-size="linux-deb"></span></a></li>
+                  <li><a href="/download/linux-rpm"><span class="asset-name">.rpm, Fedora and RHEL</span><span class="asset-size" data-size="linux-rpm"></span></a></li>
+              </ul>
+            </div>
+            <ol class="download-steps">
+                  <li><span>01</span><span><strong>Download</strong> the AppImage, or the .deb or .rpm for your system.</span></li>
+                  <li><span>02</span><span><strong>Make it runnable:</strong> <code>chmod +x AgentOS.Studio_*.AppImage</code>.</span></li>
+                  <li><span>03</span><span><strong>Run it</strong> and open <strong>Setup</strong>. One password prompt installs what is missing.</span></li>
+            </ol>
+          </div>
+        </div>
+        <p class="platform-note platform-note--night">Builds are not signed with a paid certificate, so Windows and macOS ask once on the first launch. The <a href="/setup/#install">setup guide</a> shows the exact boxes and what to click. Nothing asks you to switch off a security setting.</p>
+      </div>
+    </section>
+
+    <section class="band" id="path">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <p class="kicker">From download to first goal</p>
+          <h2>Six steps, <em>about fifteen minutes</em>.</h2>
+          <p class="section-lede">Never used a terminal? You will not need one on Windows or macOS. The app installs its own tools; you answer the prompts only a person can answer.</p>
+        </div>
+        <ol class="path">
+          <li><a href="#download"><span class="path-num">01</span><span><strong>Download</strong><span class="path-text">Pick your system. The site picks the right file.</span></span></a></li>
+          <li><a href="/setup/#install"><span class="path-num">02</span><span><strong>Install</strong><span class="path-text">What to click when Windows or macOS asks.</span></span></a></li>
+          <li><a href="/setup/#first-launch"><span class="path-num">03</span><span><strong>First launch</strong><span class="path-text">What the app does on its own the first time.</span></span></a></li>
+          <li><a href="/setup/#setup-screen"><span class="path-num">04</span><span><strong>Setup screen</strong><span class="path-text">One button installs every missing tool.</span></span></a></li>
+          <li><a href="/setup/#sign-ins"><span class="path-num">05</span><span><strong>Sign in</strong><span class="path-text">GitHub, Claude, a model and one API key.</span></span></a></li>
+          <li><a href="/setup/#first-work"><span class="path-num">06</span><span><strong>First chat and goal</strong><span class="path-text">Ask something, then hand over real work.</span></span></a></li>
+        </ol>
+        <div class="soon">
+          <span class="soon-tag">In AgentOS Studio 1.1</span>
+          <div>
+            <p><strong>One button sets up everything.</strong> The Setup screen gets a <strong>Set up everything</strong> button: one admin prompt installs every missing tool, then Studio installs Hermes, creates your vault, connects every agent and editor it finds, and opens the sign-ins.</p>
+            <p>Until 1.1 is released, version 1.0 does the same work row by row. The <a href="/setup/#setup-screen">guide covers both</a>.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="cta-band">
+      <svg class="dot-field dot-field--night" aria-hidden="true" focusable="false"><defs><pattern id="dots-cta" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="currentColor"/></pattern></defs><rect width="100%" height="100%" fill="url(#dots-cta)"/></svg>
       <div class="wrap cta-inner">
         <div>
           <h2>Ready when you are.</h2>
-          <p>Bring one agent or four. Studio connects what is installed and hides what is not.</p>
+          <p>Bring one agent or four. Studio connects what is installed and leaves the rest optional.</p>
         </div>
         <div class="hero-actions cta-actions">
-          <a class="ui-button ui-button--lg" href="/download/" data-download>Download AgentOS Studio</a>
-          <a class="ui-button ui-button--lg ui-button--secondary" href="https://github.com/konethegreat/agentos-studio/blob/main/docs/GETTING-STARTED.md">Read the docs</a>
+          <a class="ui-button ui-button--lg ui-button--cornflower" href="/download/" data-download><span data-download-label>Download AgentOS Studio</span></a>
+          <a class="ui-button ui-button--lg ui-button--quiet-on-ink" href="/setup/">Setup guide</a>
         </div>
       </div>
     </section>
@@ -191,16 +331,18 @@
       </div>
       <nav aria-label="Footer">
         <a href="/download/">Download</a>
+        <a href="/setup/">Setup guide</a>
         <a href="https://github.com/konethegreat/agentos-studio">Repository</a>
         <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/INSTALL.md">Install notes</a>
+        <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/TROUBLESHOOTING.md">Troubleshooting</a>
         <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/PRIVACY.md">App privacy</a>
         <a href="/privacy/">Site privacy</a>
         <a href="/credits/">Credits</a>
       </nav>
     </div>
     <div class="wrap footer-legal">
-      <p>Copyright 2026 K-ONE IT SOLUTIONS. AgentOS Studio is MIT licensed.</p>
-      <p>UI Vault components by <a href="https://github.com/konethegreat/ui-vault">Kone Tshivhinda</a>, MIT. Fonts under the SIL Open Font License.</p>
+      <p>Copyright 2026 Kone Tshivhinda and K-ONE IT SOLUTIONS. AgentOS Studio is MIT licensed.</p>
+      <p>UI Vault components by <a href="https://github.com/konethegreat/ui-vault">Kone Tshivhinda</a> and Magic UI, MIT. Fonts under the SIL Open Font License. <a href="/credits/">Full credits</a>.</p>
     </div>
   </footer>
   <script src="/app.js" defer></script>
