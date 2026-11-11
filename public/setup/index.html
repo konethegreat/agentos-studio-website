@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Set up AgentOS Studio, step by step, on Windows, macOS and Linux</title>
+  <meta name="description" content="A plain-language guide to installing AgentOS Studio: download, the Windows and macOS security prompts, the Setup screen that installs every tool, the sign-ins, and your first chat and goal.">
+  <meta name="author" content="Kone Tshivhinda and K-ONE IT SOLUTIONS">
+  <meta name="theme-color" content="#0b0e15">
+  <meta property="og:title" content="Set up AgentOS Studio, step by step, on Windows, macOS and Linux">
+  <meta property="og:description" content="A plain-language guide to installing AgentOS Studio: download, the Windows and macOS security prompts, the Setup screen that installs every tool, the sign-ins, and your first chat and goal.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/" aria-label="AgentOS Studio home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">AgentOS<span>studio</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="/download/">Download</a>
+        <a href="/setup/" aria-current="page">Setup guide</a>
+        <a class="nav-wide" href="https://github.com/konethegreat/agentos-studio/blob/main/docs/GETTING-STARTED.md">Docs</a>
+        <a class="nav-wide" href="https://github.com/konethegreat/agentos-studio">GitHub</a>
+      </nav>
+      <a class="ui-button ui-button--sm header-cta" href="/download/" data-download><span data-download-label>Get the app</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head page-head--night">
+      <canvas class="hero-canvas" data-nebula aria-hidden="true"></canvas>
+      <div class="wrap">
+        <p class="crumbs"><a href="/">Home</a> / Setup guide</p>
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Setup guide</p>
+        <h1>From download to your <em>first goal</em>.</h1>
+        <p class="lede">Seven short steps for <strong data-chosen-os>your computer</strong>. No terminal needed on Windows or macOS: the app installs its own tools and you only answer the prompts a person has to answer. Tick each step as you go.</p>
+        <div class="page-meta">
+          <span class="pill">About 15 minutes</span>
+          <span class="pill">Version <span class="js-version">1.0.0</span>, with what changes in 1.1</span>
+        </div>
+          <div class="os-switch" data-os-switch hidden>
+            <span>My computer runs</span>
+            <div class="os-tablist" role="group" aria-label="Operating system">
+              <button class="os-tab" type="button" data-pick="windows" aria-pressed="false">Windows<span class="here">detected</span></button>
+              <button class="os-tab" type="button" data-pick="macos" aria-pressed="false">macOS<span class="here">detected</span></button>
+              <button class="os-tab" type="button" data-pick="linux" aria-pressed="false">Linux<span class="here">detected</span></button>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap guide-layout">
+        <nav class="guide-toc" aria-label="Steps">
+          <p>Steps</p>
+          <ol>
+                <li><a href="#download"><span>01</span>Download the app</a></li>
+                <li><a href="#install"><span>02</span>Run the installer</a></li>
+                <li><a href="#first-launch"><span>03</span>Open it for the first time</a></li>
+                <li><a href="#setup-screen"><span>04</span>Let Setup install the rest</a></li>
+                <li><a href="#sign-ins"><span>05</span>Sign in to your accounts</a></li>
+                <li><a href="#first-work"><span>06</span>Your first chat and first goal</a></li>
+                <li><a href="#troubleshooting"><span>07</span>If something goes wrong</a></li>
+          </ol>
+          <div class="progress">
+            <div class="progress-bar"><i></i></div>
+            <p class="progress-text" aria-live="polite">0 of 7 steps done</p>
+          </div>
+        </nav>
+        <div class="steps">
+          <section class="step" id="download" aria-labelledby="download-title">
+            <div class="step-head">
+              <span class="step-num" aria-hidden="true">01</span>
+              <div>
+                <h2 id="download-title">Download the app</h2>
+                <p class="step-time">1 minute</p>
+              </div>
+            </div>
+            <div class="step-body">
+              <div class="os-block" data-for="windows">
+                <p class="os-label">Windows</p>
+                <p>Press the button. Your browser saves <code>AgentOS.Studio_1.0.0_x64-setup.exe</code>, about 6 MB, to your Downloads folder.</p>
+                <p><a class="ui-button ui-button--lg" href="/download/windows">Download for Windows</a></p>
+                <p>Working for a company that installs software centrally? Your IT team may prefer the <a href="/download/windows-msi">MSI installer</a>.</p>
+              </div>
+              <div class="os-block" data-for="macos">
+                <p class="os-label">macOS</p>
+                <p>Not sure which Mac you have? Open the Apple menu, then <span class="ui-label">About This Mac</span>. If it says <strong>Chip: Apple M1</strong> (or M2, M3, M4), pick Apple Silicon. If it says <strong>Processor: Intel</strong>, pick Intel.</p>
+                <p><a class="ui-button ui-button--lg" href="/download/macos-arm64">Download for Apple Silicon</a> <a class="ui-button ui-button--lg ui-button--secondary" href="/download/macos-x64">Download for Intel</a></p>
+              </div>
+              <div class="os-block" data-for="linux">
+                <p class="os-label">Linux</p>
+                <p>The AppImage runs on almost every distribution. If you use Ubuntu or Debian, the .deb installs like any other package; on Fedora, use the .rpm.</p>
+                <p><a class="ui-button ui-button--lg" href="/download/linux-appimage">Download the AppImage</a> <a class="ui-button ui-button--lg ui-button--secondary" href="/download/linux-deb">.deb</a> <a class="ui-button ui-button--lg ui-button--secondary" href="/download/linux-rpm">.rpm</a></p>
+              </div>
+              <details class="faq-inline">
+                <summary>Optional: check that the file is the one we published</summary>
+                <p>Each release on <a href="https://github.com/konethegreat/agentos-studio/releases/latest">GitHub</a> lists a SHA256SUMS file per system. Run the command for your system in the folder with the download, and compare the long string it prints with the line for the same file name. They must match exactly; if they do not, delete the file and download it again.</p>
+                <p>Windows, in PowerShell:</p>
+                <div class="code-line"><code id="cmd-1">Get-FileHash .\AgentOS.Studio_1.0.0_x64-setup.exe -Algorithm SHA256</code><button class="copy-btn" type="button" data-copy="cmd-1" hidden>Copy</button></div>
+                <p>macOS and Linux, in Terminal:</p>
+                <div class="code-line"><code id="cmd-2">shasum -a 256 ~/Downloads/AgentOS.Studio_1.0.0_*</code><button class="copy-btn" type="button" data-copy="cmd-2" hidden>Copy</button></div>
+              </details>
+            </div>
+            <label class="step-done"><input type="checkbox"> I have done this step</label>
+          </section>
+          <section class="step" id="install" aria-labelledby="install-title">
+            <div class="step-head">
+              <span class="step-num" aria-hidden="true">02</span>
+              <div>
+                <h2 id="install-title">Run the installer</h2>
+                <p class="step-time">2 minutes</p>
+              </div>
+            </div>
+            <div class="step-body">
+              <div class="os-block" data-for="windows">
+                <p class="os-label">Windows</p>
+                <ol>
+                  <li>Open your Downloads folder and double-click <code>AgentOS.Studio_1.0.0_x64-setup.exe</code>.</li>
+                  <li>A blue box appears: <strong>Windows protected your PC</strong>. This is expected: the app is new and not signed with a paid certificate. Click <span class="ui-label">More info</span>.</li>
+                  <li>The box now shows the app name and <em>Unknown publisher</em>. Click <span class="ui-label">Run anyway</span>.</li>
+                  <li>The installer opens. Click <span class="ui-label">Next</span> and <span class="ui-label">Install</span>. It installs for your user only and does not need an administrator password.</li>
+                </ol>
+                <figure class="mock">
+                  <div class="mock-smartscreen" role="img" aria-label="Illustration of the SmartScreen box with More info and Run anyway highlighted">
+                    <p class="t">Windows protected your PC</p>
+                    <p class="b">Microsoft Defender SmartScreen prevented an unrecognized app from starting. Running this app might put your PC at risk.</p>
+                    <span class="more hl">More info</span>
+                    <p class="rows">App: AgentOS.Studio_1.0.0_x64-setup.exe<br>Publisher: Unknown publisher</p>
+                    <p class="btns"><span class="hl">Run anyway</span><span>Don't run</span></p>
+                  </div>
+                  <figcaption>Illustration of the box you will see. Click the two highlighted items, in that order.</figcaption>
+                </figure>
+                <div class="callout callout--warn"><div><p>No <strong>More info</strong> link at all? Then Smart App Control or a work policy is blocking it, not SmartScreen. See <a href="#troubleshooting">Troubleshooting</a>. Do not switch off Windows security to get past it.</p></div></div>
+              </div>
+              <div class="os-block" data-for="macos">
+                <p class="os-label">macOS</p>
+                <ol>
+                  <li>Double-click the downloaded <code>.dmg</code>. A window opens with the AgentOS Studio icon.</li>
+                  <li>Drag the icon onto the <span class="ui-label">Applications</span> folder in that window.</li>
+                  <li>Open <span class="ui-label">Applications</span> in Finder. <strong>Right-click</strong> (or Control-click) AgentOS Studio and choose <span class="ui-label">Open</span>.</li>
+                  <li>macOS says it could not verify the app. Click <span class="ui-label">Open</span> in that box. From now on it opens normally.</li>
+                </ol>
+                <figure class="mock">
+                  <div class="mock-mac" role="img" aria-label="Illustration of the macOS confirmation box with the Open button highlighted">
+                    <div class="icon"></div>
+                    <p class="t">macOS cannot verify the developer of "AgentOS Studio". Are you sure you want to open it?</p>
+                    <p class="b">By opening this app, you will be overriding system security.</p>
+                    <p class="btns"><span class="primary hl">Open</span><span>Cancel</span></p>
+                  </div>
+                  <figcaption>Illustration. The exact words change between macOS versions; the button to press is Open.</figcaption>
+                </figure>
+                <div class="callout"><div><p>Only seeing <strong>Move to Trash</strong> and <strong>Done</strong>? Click <span class="ui-label">Done</span>, open <span class="ui-label">System Settings</span>, then <span class="ui-label">Privacy and Security</span>, scroll down and click <span class="ui-label">Open Anyway</span>. Apple explains this at <a href="https://support.apple.com/en-us/102445">support.apple.com/en-us/102445</a>.</p></div></div>
+              </div>
+              <div class="os-block" data-for="linux">
+                <p class="os-label">Linux</p>
+                <p><strong>AppImage:</strong> open Terminal in your Downloads folder and run these two lines. The first makes the file runnable, the second starts it.</p>
+                <div class="code-line"><code id="cmd-3">chmod +x AgentOS.Studio_1.0.0_amd64.AppImage</code><button class="copy-btn" type="button" data-copy="cmd-3" hidden>Copy</button></div>
+                <div class="code-line"><code id="cmd-4">./AgentOS.Studio_1.0.0_amd64.AppImage</code><button class="copy-btn" type="button" data-copy="cmd-4" hidden>Copy</button></div>
+                <p><strong>.deb</strong> (Ubuntu, Debian, Mint):</p>
+                <div class="code-line"><code id="cmd-5">sudo apt install ./AgentOS.Studio_1.0.0_amd64.deb</code><button class="copy-btn" type="button" data-copy="cmd-5" hidden>Copy</button></div>
+                <p><strong>.rpm</strong> (Fedora, RHEL):</p>
+                <div class="code-line"><code id="cmd-6">sudo dnf install ./AgentOS.Studio-1.0.0-1.x86_64.rpm</code><button class="copy-btn" type="button" data-copy="cmd-6" hidden>Copy</button></div>
+                <div class="callout"><div><p>If the AppImage says FUSE is missing, install it with <code>sudo apt install libfuse2</code> (Ubuntu 22.04) or <code>sudo apt install libfuse2t64</code> (Ubuntu 24.04), then run it again.</p></div></div>
+              </div>
+            </div>
+            <label class="step-done"><input type="checkbox"> I have done this step</label>
+          </section>
+          <section class="step" id="first-launch" aria-labelledby="first-launch-title">
+            <div class="step-head">
+              <span class="step-num" aria-hidden="true">03</span>
+              <div>
+                <h2 id="first-launch-title">Open it for the first time</h2>
+                <p class="step-time">1 minute, hands off</p>
+              </div>
+            </div>
+            <div class="step-body">
+              <p>Open AgentOS Studio: from the Start menu on Windows, from Applications on macOS, or from your app menu on Linux. The first launch takes a few seconds longer because the app gets itself ready. You do not need to do anything during this:</p>
+              <ul>
+                <li>It creates its own folders and database.</li>
+                <li>It creates a notes folder called <strong>AgentOS Vault</strong> in your Documents. This is the shared memory every agent reads. You can open it in Obsidian later, but you do not have to.</li>
+                <li>It runs nine quick health checks and shows them on the start screen.</li>
+              </ul>
+              <p>A short welcome tour then offers three stops: Setup, Missions and Help. Take the first one, <strong>Setup</strong>. You can also reach it any time from the left rail: <span class="ui-label">System</span>, then <span class="ui-label">Setup</span>.</p>
+              <figure>
+                <div class="shot"><img src="/assets/screens/studio-today-v1.webp" width="1440" height="844" alt="The AgentOS Studio Today screen with the navigation rail on the left" loading="lazy" decoding="async"></div>
+                <figcaption class="shot-caption">The Today screen, what you see once setup is done. The rail on the left holds Chat, Work, Brain, Code and System.</figcaption>
+              </figure>
+            </div>
+            <label class="step-done"><input type="checkbox"> I have done this step</label>
+          </section>
+          <section class="step" id="setup-screen" aria-labelledby="setup-screen-title">
+            <div class="step-head">
+              <span class="step-num" aria-hidden="true">04</span>
+              <div>
+                <h2 id="setup-screen-title">Let Setup install the rest</h2>
+                <p class="step-time">5 to 10 minutes, mostly waiting</p>
+              </div>
+            </div>
+            <div class="step-body">
+              <p>The Setup screen checks your computer and lists every tool AgentOS Studio works with: Git, Node.js, the GitHub command line, Claude Code, Hermes and its plugins, your vault and the connections between agents. Green means ready. Amber means missing or broken. Rows marked <strong>optional</strong> are for tools you do not have to use.</p>
+
+              <h3>In AgentOS Studio 1.1: one button</h3>
+              <p>Version 1.1 adds a <span class="ui-label">Set up everything</span> button at the top of the Setup screen. It shows the plan first, then installs every missing tool in one pass:</p>
+              <figure class="mock">
+                <div class="mock-app" role="img" aria-label="Illustration of the Set up everything card in AgentOS Studio 1.1">
+                  <div class="bar"><b>Set up everything</b><span class="btn">Set up everything</span></div>
+                  <ul>
+                    <li><i class="warn"></i><span>Install Git, Node.js, GitHub CLI and Claude Code<small>Windows asks for admin permission once for all of them</small></span><em>1 prompt</em></li>
+                    <li><i class="warn"></i><span>Then set up Hermes, plugins, PATH, vault and connections<small>No prompts; progress streams into the Setup log</small></span><em>automatic</em></li>
+                    <li><i class="opt"></i><span>Last, sign in to GitHub, Claude and a Hermes model<small>Each opens its own window; finish it there</small></span><em class="go">your turn</em></li>
+                  </ul>
+                </div>
+                <figcaption>Illustration of the 1.1 card. It lists only what your computer is missing.</figcaption>
+              </figure>
+              <div class="os-block" data-for="windows">
+                <p class="os-label">Windows</p>
+                <p><strong>Windows:</strong> you answer <strong>one</strong> admin prompt (the box that asks <em>Do you want to allow this app to make changes to your device?</em>, click <span class="ui-label">Yes</span>). That single prompt covers Git, Node.js, the GitHub CLI and Claude Code, installed with winget. If winget itself is missing, the same pass installs it first.</p>
+              </div>
+              <div class="os-block" data-for="macos">
+                <p class="os-label">macOS</p>
+                <p><strong>macOS:</strong> the tools are installed with Homebrew. If Homebrew is missing, its official installer opens in Terminal and asks for your Mac password once; type it (nothing shows while you type) and press Return.</p>
+              </div>
+              <div class="os-block" data-for="linux">
+                <p class="os-label">Linux</p>
+                <p><strong>Linux:</strong> one password prompt (pkexec) installs the missing tools with apt or dnf, whichever your system uses.</p>
+              </div>
+              <p>After the tools, with no further prompts, Studio:</p>
+              <ol>
+                <li>installs Hermes and its plugins,</li>
+                <li>fixes your PATH so new tools are found without a restart,</li>
+                <li>creates the Obsidian vault if you do not have one,</li>
+                <li>connects the AgentOS hub to every agent, and to Claude Desktop, Cursor, VS Code, Windsurf and Codex when they are installed,</li>
+                <li>and finally opens the sign-ins in <a href="#sign-ins">step 5</a>.</li>
+              </ol>
+
+              <h3>In AgentOS Studio 1.0 (the current release)</h3>
+              <p>Version 1.0 does the same work one row at a time. Each amber row has its own button: <span class="ui-label">Install</span>, <span class="ui-label">Sign in</span> or <span class="ui-label">Change model</span>. The big button at the top, <span class="ui-label">Auto-Setup and Repair Everything</span>, repairs everything that is broken in one go (1.1 renames it <strong>Repair what is broken</strong>). Press it, watch the Setup log, then press <span class="ui-label">Re-check</span>.</p>
+              <div class="os-block" data-for="windows">
+                <p class="os-label">Windows</p>
+                <p><strong>Windows with 1.0:</strong> each tool installs through winget and may show its own admin prompt; click <span class="ui-label">Yes</span> each time. If a row says winget is not available, open the Microsoft Store, install <strong>App Installer</strong>, and press the button again.</p>
+              </div>
+              <div class="os-block" data-for="macos">
+                <p class="os-label">macOS</p>
+                <p><strong>macOS with 1.0:</strong> Studio installs tools with Homebrew, so install Homebrew first. Open Terminal (press Command and Space, type Terminal, press Return), paste this line, press Return and follow what it says:</p>
+                <div class="code-line"><code id="cmd-7">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code><button class="copy-btn" type="button" data-copy="cmd-7" hidden>Copy</button></div>
+                <p>Then go back to Setup and press <span class="ui-label">Auto-Setup and Repair Everything</span>.</p>
+              </div>
+              <div class="os-block" data-for="linux">
+                <p class="os-label">Linux</p>
+                <p><strong>Linux with 1.0:</strong> Studio asks you to install the system tools yourself. Paste the line for your system into Terminal, then press <span class="ui-label">Re-check</span> in Setup.</p>
+                <p>Ubuntu, Debian and Mint:</p>
+                <div class="code-line"><code id="cmd-8">sudo apt install -y git nodejs npm gh</code><button class="copy-btn" type="button" data-copy="cmd-8" hidden>Copy</button></div>
+                <p>Fedora:</p>
+                <div class="code-line"><code id="cmd-9">sudo dnf install -y git nodejs gh</code><button class="copy-btn" type="button" data-copy="cmd-9" hidden>Copy</button></div>
+                <p>Claude Code, from Anthropic's official installer:</p>
+                <div class="code-line"><code id="cmd-10">curl -fsSL https://claude.ai/install.sh | bash</code><button class="copy-btn" type="button" data-copy="cmd-10" hidden>Copy</button></div>
+                <p>Studio then installs Hermes, its plugins and the vault itself when you press <span class="ui-label">Auto-Setup and Repair Everything</span>.</p>
+              </div>
+              <div class="callout"><div><p>A row stays amber after an install? Close AgentOS Studio, open it again and press <span class="ui-label">Re-check</span>. New tools are sometimes only visible to programs started after the install.</p></div></div>
+            </div>
+            <label class="step-done"><input type="checkbox"> I have done this step</label>
+          </section>
+          <section class="step" id="sign-ins" aria-labelledby="sign-ins-title">
+            <div class="step-head">
+              <span class="step-num" aria-hidden="true">05</span>
+              <div>
+                <h2 id="sign-ins-title">Sign in to your accounts</h2>
+                <p class="step-time">3 minutes</p>
+              </div>
+            </div>
+            <div class="step-body">
+              <p>Some things only you can do, because they are your accounts. Studio opens each one for you; you sign in and approve. You need at least <strong>one</strong> way to reach a model: a Claude subscription, or an API key.</p>
+              <div class="signin-grid">
+                <article class="spotlight-card" data-tone="bone" tabindex="0">
+                  <div class="spotlight-card__top"><span class="spotlight-card__eyebrow">1. GitHub</span><span class="spotlight-card__dot" aria-hidden="true"></span></div>
+                  <ol>
+                    <li>In Setup, press <strong>Sign in</strong> on the GitHub row.</li>
+                    <li>A one-time code appears in the Setup log and github.com opens. Copy the code into the page.</li>
+                    <li>Click <strong>Authorize</strong>. No GitHub account yet? Create one free at <a href="https://github.com/signup">github.com/signup</a>.</li>
+                  </ol>
+                </article>
+                <article class="spotlight-card" data-tone="signal" tabindex="0">
+                  <div class="spotlight-card__top"><span class="spotlight-card__eyebrow">2. Claude</span><span class="spotlight-card__dot" aria-hidden="true"></span></div>
+                  <ol>
+                    <li>Press <strong>Sign in</strong> on the Claude row.</li>
+                    <li>claude.ai opens in your browser. Sign in with your Claude Pro or Max account.</li>
+                    <li>Click <strong>Authorize</strong>, then come back to Studio and press <strong>Re-check</strong>.</li>
+                  </ol>
+                </article>
+                <article class="spotlight-card" tabindex="0">
+                  <div class="spotlight-card__top"><span class="spotlight-card__eyebrow">3. Hermes model</span><span class="spotlight-card__dot" aria-hidden="true"></span></div>
+                  <ol>
+                    <li>Press <strong>Change model</strong> on the Hermes model row.</li>
+                    <li>Pick a provider you have signed in to or have a key for, then a model from its list.</li>
+                    <li>Not sure? Choose the Claude subscription if you have one; otherwise OpenRouter.</li>
+                  </ol>
+                </article>
+                <article class="spotlight-card" data-tone="signal" tabindex="0">
+                  <div class="spotlight-card__top"><span class="spotlight-card__eyebrow">4. An API key, such as OpenRouter</span><span class="spotlight-card__dot" aria-hidden="true"></span></div>
+                  <ol>
+                    <li>Go to <a href="https://openrouter.ai/keys">openrouter.ai/keys</a>, sign in, and press <strong>Create key</strong>. Add a few dollars of credit.</li>
+                    <li>Copy the key. In Setup, find <strong>Connect your subscriptions</strong>, paste it into the OpenRouter field, press <strong>Save key</strong>.</li>
+                    <li>Studio stores it in Hermes' own settings and only ever shows its name again.</li>
+                  </ol>
+                </article>
+              </div>
+              <div class="callout"><div><p>A Claude subscription is a flat monthly price. OpenRouter charges per use, so Studio shows your OpenRouter spend and lets each goal have a budget.</p></div></div>
+            </div>
+            <label class="step-done"><input type="checkbox"> I have done this step</label>
+          </section>
+          <section class="step" id="first-work" aria-labelledby="first-work-title">
+            <div class="step-head">
+              <span class="step-num" aria-hidden="true">06</span>
+              <div>
+                <h2 id="first-work-title">Your first chat and first goal</h2>
+                <p class="step-time">5 minutes</p>
+              </div>
+            </div>
+            <div class="step-body">
+              <h3>Your first chat</h3>
+              <ol>
+                <li>Click <span class="ui-label">Chat</span> in the left rail.</li>
+                <li>Choose a folder to work in, for example a project you already have. The agent can read the files in it.</li>
+                <li>Pick <strong>Hermes</strong> or <strong>Claude Code</strong> at the top, type a question such as <em>What is in this folder, and what would you improve first?</em>, and press Enter.</li>
+              </ol>
+              <p>The answer streams in. Every action the agent takes, such as reading a file or running a command, appears as a card you can open. If it wants to do something risky, Studio asks you first.</p>
+              <h3>Your first goal</h3>
+              <ol>
+                <li>Click <span class="ui-label">Work</span>, then <span class="ui-label">Goals</span>, then <span class="ui-label">New goal</span>.</li>
+                <li>Write the outcome in one sentence, for example <em>Add a dark mode switch to the settings page</em>.</li>
+                <li>Pick the repository. Press <span class="ui-label">Add check</span> and say how Studio will know it is done: a command such as <code>npm test</code>, a web address that must load, or a file that must exist.</li>
+                <li>Leave the level on <strong>Ask on risk</strong>, so Studio asks you before anything risky. Press <span class="ui-label">Create goal</span>.</li>
+              </ol>
+              <p>Hermes splits the goal into missions, agents work on them in separate copies of the code, a second agent reviews every change, and the checks run at the end. Follow it live in <span class="ui-label">Work</span>, then <span class="ui-label">Run timeline</span>.</p>
+              <figure>
+                <div class="shot"><img src="/assets/screens/studio-timeline-v1.webp" width="1440" height="874" alt="The Run timeline showing a mission's steps from task claimed to review approved and done" loading="lazy" decoding="async"></div>
+                <figcaption class="shot-caption">The Run timeline: each mission step, the pull request, the review and the result.</figcaption>
+              </figure>
+            </div>
+            <label class="step-done"><input type="checkbox"> I have done this step</label>
+          </section>
+          <section class="step" id="troubleshooting" aria-labelledby="troubleshooting-title">
+            <div class="step-head">
+              <span class="step-num" aria-hidden="true">07</span>
+              <div>
+                <h2 id="troubleshooting-title">If something goes wrong</h2>
+                <p class="step-time">when you need it</p>
+              </div>
+            </div>
+            <div class="step-body">
+              <div class="faq">
+                <details>
+                  <summary>Windows shows no More info link, or says Smart App Control blocked it</summary>
+                  <div class="faq-body"><p>That is Smart App Control or an organisation policy, not SmartScreen, and it has no per-app override. Check it in Windows Security, <strong>App and browser control</strong>, <strong>Smart App Control</strong>. If it is On, install on a computer where it is Off or build from source. Switching it off cannot be undone without reinstalling Windows, so we do not recommend it just for one app. Details: <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/INSTALL.md">install notes</a>.</p></div>
+                </details>
+                <details>
+                  <summary>macOS says the app is damaged or cannot be opened</summary>
+                  <div class="faq-body"><p>Delete the copy in Applications, download the DMG again, drag it into Applications, and use right-click, <strong>Open</strong>. If only <strong>Move to Trash</strong> appears, use <strong>Open Anyway</strong> in System Settings, Privacy and Security.</p></div>
+                </details>
+                <details>
+                  <summary>The Linux AppImage does nothing when I double-click it</summary>
+                  <div class="faq-body"><p>Run <code>chmod +x</code> on it as shown in step 2, then start it from Terminal to see any message. A FUSE error means installing <code>libfuse2</code>; you can also start it with <code>--appimage-extract-and-run</code>.</p></div>
+                </details>
+                <details>
+                  <summary>A tool is installed but Setup still shows it as missing</summary>
+                  <div class="faq-body"><p>Close AgentOS Studio completely and open it again, then press <strong>Re-check</strong>. If it is still missing, sign out of your computer and back in: some installers only update the search path for new sessions. Version 1.1 fixes the path for you during setup.</p></div>
+                </details>
+                <details>
+                  <summary>The sign-in window never opened</summary>
+                  <div class="faq-body"><p>Look at the Setup log at the bottom of the Setup screen: it prints the web address and any one-time code. Copy the address into your browser by hand. Then press <strong>Re-check</strong>.</p></div>
+                </details>
+                <details>
+                  <summary>Chat answers with an error about the model or the key</summary>
+                  <div class="faq-body"><p>Open Setup and check the Hermes model row. Pick a model from a provider that is connected, or save a fresh OpenRouter key. A key with no credit fails too; add credit at openrouter.ai.</p></div>
+                </details>
+                <details>
+                  <summary>Something else is red</summary>
+                  <div class="faq-body"><p>Open <strong>System</strong>, then <strong>Diagnostics</strong>. It runs the start-up checks again, shows each result and offers a fix button where one exists. The full guide is in <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/TROUBLESHOOTING.md">Troubleshooting</a>.</p></div>
+                </details>
+                <details>
+                  <summary>I need a person</summary>
+                  <div class="faq-body"><p>Open an issue at <a href="https://github.com/konethegreat/agentos-studio/issues">github.com/konethegreat/agentos-studio/issues</a> with what you clicked, what you expected and a screenshot. Diagnostics can copy the logs for you; check them for anything private before you paste.</p></div>
+                </details>
+              </div>
+            </div>
+            <label class="step-done"><input type="checkbox"> I have done this step</label>
+          </section>
+          <div class="next-link">
+            <div>
+              <strong>That is everything.</strong>
+              <p>Want the details? The app's own Help tab has every guide, and the same text is on GitHub.</p>
+            </div>
+            <a class="ui-button ui-button--on-ink" href="https://github.com/konethegreat/agentos-studio/blob/main/docs/GETTING-STARTED.md">Read the full docs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-mark">AgentOS Studio</p>
+        <p class="footer-note">A desktop control plane for coding agents. Chats, keys and notes stay on your machine. Built by Kone Tshivhinda and K-ONE IT SOLUTIONS in Johannesburg.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="/download/">Download</a>
+        <a href="/setup/">Setup guide</a>
+        <a href="https://github.com/konethegreat/agentos-studio">Repository</a>
+        <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/INSTALL.md">Install notes</a>
+        <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/TROUBLESHOOTING.md">Troubleshooting</a>
+        <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/PRIVACY.md">App privacy</a>
+        <a href="/privacy/">Site privacy</a>
+        <a href="/credits/">Credits</a>
+      </nav>
+    </div>
+    <div class="wrap footer-legal">
+      <p>Copyright 2026 Kone Tshivhinda and K-ONE IT SOLUTIONS. AgentOS Studio is MIT licensed.</p>
+      <p>UI Vault components by <a href="https://github.com/konethegreat/ui-vault">Kone Tshivhinda</a> and Magic UI, MIT. Fonts under the SIL Open Font License. <a href="/credits/">Full credits</a>.</p>
+    </div>
+  </footer>
+  <script src="/app.js" defer></script>
+  <script src="/nebula.js" defer></script>
+</body>
+</html>
