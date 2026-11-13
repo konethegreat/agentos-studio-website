@@ -14,6 +14,16 @@
       "size": 10100736,
       "url": "https://github.com/konethegreat/agentos-studio/releases/download/v1.2.9/AgentOS.Studio_1.2.9_x64_en-US.msi"
     },
+    "macos-arm64": {
+      "name": "AgentOS.Studio_1.2.9_aarch64.dmg",
+      "size": 8459783,
+      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v1.2.9/AgentOS.Studio_1.2.9_aarch64.dmg"
+    },
+    "macos-x64": {
+      "name": "AgentOS.Studio_1.2.9_x64.dmg",
+      "size": 8912510,
+      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v1.2.9/AgentOS.Studio_1.2.9_x64.dmg"
+    },
     "linux-appimage": {
       "name": "AgentOS.Studio_1.2.9_amd64.AppImage",
       "size": 86993400,
