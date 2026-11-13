@@ -26,7 +26,7 @@
       <nav class="site-nav" aria-label="Main">
         <a href="/download/">Download</a>
         <a href="/setup/" aria-current="page">Setup guide</a>
-        <a class="nav-wide" href="https://github.com/konethegreat/agentos-studio/blob/main/docs/GETTING-STARTED.md">Docs</a>
+        <a class="nav-wide" href="/docs/">Docs</a>
         <a class="nav-wide" href="https://github.com/konethegreat/agentos-studio">GitHub</a>
       </nav>
       <a class="ui-button ui-button--sm header-cta" href="/download/" data-download><span data-download-label>Get the app</span></a>
@@ -43,7 +43,7 @@
         <p class="lede">Seven short steps for <strong data-chosen-os>your computer</strong>. No terminal needed on Windows or macOS: the app installs its own tools and you only answer the prompts a person has to answer. Tick each step as you go.</p>
         <div class="page-meta">
           <span class="pill">About 15 minutes</span>
-          <span class="pill">Version <span class="js-version">1.0.0</span>, with what changes in 1.1</span>
+          <span class="pill">Version <span class="js-version">1.2.5</span></span>
         </div>
           <div class="os-switch" data-os-switch hidden>
             <span>My computer runs</span>
@@ -86,7 +86,7 @@
             <div class="step-body">
               <div class="os-block" data-for="windows">
                 <p class="os-label">Windows</p>
-                <p>Press the button. Your browser saves <code>AgentOS.Studio_1.0.0_x64-setup.exe</code>, about 6 MB, to your Downloads folder.</p>
+                <p>Press the button. Your browser saves <code>AgentOS.Studio_<span class="js-version">1.2.5</span>_x64-setup.exe</code>, about 6 MB, to your Downloads folder.</p>
                 <p><a class="ui-button ui-button--lg" href="/download/windows">Download for Windows</a></p>
                 <p>Working for a company that installs software centrally? Your IT team may prefer the <a href="/download/windows-msi">MSI installer</a>.</p>
               </div>
@@ -104,9 +104,9 @@
                 <summary>Optional: check that the file is the one we published</summary>
                 <p>Each release on <a href="https://github.com/konethegreat/agentos-studio/releases/latest">GitHub</a> lists a SHA256SUMS file per system. Run the command for your system in the folder with the download, and compare the long string it prints with the line for the same file name. They must match exactly; if they do not, delete the file and download it again.</p>
                 <p>Windows, in PowerShell:</p>
-                <div class="code-line"><code id="cmd-1">Get-FileHash .\AgentOS.Studio_1.0.0_x64-setup.exe -Algorithm SHA256</code><button class="copy-btn" type="button" data-copy="cmd-1" hidden>Copy</button></div>
+                <div class="code-line"><code id="cmd-1">Get-FileHash .\AgentOS.Studio_<span class="js-version">1.2.5</span>_x64-setup.exe -Algorithm SHA256</code><button class="copy-btn" type="button" data-copy="cmd-1" hidden>Copy</button></div>
                 <p>macOS and Linux, in Terminal:</p>
-                <div class="code-line"><code id="cmd-2">shasum -a 256 ~/Downloads/AgentOS.Studio_1.0.0_*</code><button class="copy-btn" type="button" data-copy="cmd-2" hidden>Copy</button></div>
+                <div class="code-line"><code id="cmd-2">shasum -a 256 ~/Downloads/AgentOS.Studio_<span class="js-version">1.2.5</span>_*</code><button class="copy-btn" type="button" data-copy="cmd-2" hidden>Copy</button></div>
               </details>
             </div>
             <label class="step-done"><input type="checkbox"> I have done this step</label>
@@ -123,7 +123,7 @@
               <div class="os-block" data-for="windows">
                 <p class="os-label">Windows</p>
                 <ol>
-                  <li>Open your Downloads folder and double-click <code>AgentOS.Studio_1.0.0_x64-setup.exe</code>.</li>
+                  <li>Open your Downloads folder and double-click <code>AgentOS.Studio_<span class="js-version">1.2.5</span>_x64-setup.exe</code>.</li>
                   <li>A blue box appears: <strong>Windows protected your PC</strong>. This is expected: the app is new and not signed with a paid certificate. Click <span class="ui-label">More info</span>.</li>
                   <li>The box now shows the app name and <em>Unknown publisher</em>. Click <span class="ui-label">Run anyway</span>.</li>
                   <li>The installer opens. Click <span class="ui-label">Next</span> and <span class="ui-label">Install</span>. It installs for your user only and does not need an administrator password.</li>
@@ -133,7 +133,7 @@
                     <p class="t">Windows protected your PC</p>
                     <p class="b">Microsoft Defender SmartScreen prevented an unrecognized app from starting. Running this app might put your PC at risk.</p>
                     <span class="more hl">More info</span>
-                    <p class="rows">App: AgentOS.Studio_1.0.0_x64-setup.exe<br>Publisher: Unknown publisher</p>
+                    <p class="rows">App: AgentOS.Studio_<span class="js-version">1.2.5</span>_x64-setup.exe<br>Publisher: Unknown publisher</p>
                     <p class="btns"><span class="hl">Run anyway</span><span>Don't run</span></p>
                   </div>
                   <figcaption>Illustration of the box you will see. Click the two highlighted items, in that order.</figcaption>
@@ -162,12 +162,12 @@
               <div class="os-block" data-for="linux">
                 <p class="os-label">Linux</p>
                 <p><strong>AppImage:</strong> open Terminal in your Downloads folder and run these two lines. The first makes the file runnable, the second starts it.</p>
-                <div class="code-line"><code id="cmd-3">chmod +x AgentOS.Studio_1.0.0_amd64.AppImage</code><button class="copy-btn" type="button" data-copy="cmd-3" hidden>Copy</button></div>
-                <div class="code-line"><code id="cmd-4">./AgentOS.Studio_1.0.0_amd64.AppImage</code><button class="copy-btn" type="button" data-copy="cmd-4" hidden>Copy</button></div>
+                <div class="code-line"><code id="cmd-3">chmod +x AgentOS.Studio_<span class="js-version">1.2.5</span>_amd64.AppImage</code><button class="copy-btn" type="button" data-copy="cmd-3" hidden>Copy</button></div>
+                <div class="code-line"><code id="cmd-4">./AgentOS.Studio_<span class="js-version">1.2.5</span>_amd64.AppImage</code><button class="copy-btn" type="button" data-copy="cmd-4" hidden>Copy</button></div>
                 <p><strong>.deb</strong> (Ubuntu, Debian, Mint):</p>
-                <div class="code-line"><code id="cmd-5">sudo apt install ./AgentOS.Studio_1.0.0_amd64.deb</code><button class="copy-btn" type="button" data-copy="cmd-5" hidden>Copy</button></div>
+                <div class="code-line"><code id="cmd-5">sudo apt install ./AgentOS.Studio_<span class="js-version">1.2.5</span>_amd64.deb</code><button class="copy-btn" type="button" data-copy="cmd-5" hidden>Copy</button></div>
                 <p><strong>.rpm</strong> (Fedora, RHEL):</p>
-                <div class="code-line"><code id="cmd-6">sudo dnf install ./AgentOS.Studio-1.0.0-1.x86_64.rpm</code><button class="copy-btn" type="button" data-copy="cmd-6" hidden>Copy</button></div>
+                <div class="code-line"><code id="cmd-6">sudo dnf install ./AgentOS.Studio-<span class="js-version">1.2.5</span>-1.x86_64.rpm</code><button class="copy-btn" type="button" data-copy="cmd-6" hidden>Copy</button></div>
                 <div class="callout"><div><p>If the AppImage says FUSE is missing, install it with <code>sudo apt install libfuse2</code> (Ubuntu 22.04) or <code>sudo apt install libfuse2t64</code> (Ubuntu 24.04), then run it again.</p></div></div>
               </div>
             </div>
@@ -207,10 +207,10 @@
             <div class="step-body">
               <p>The Setup screen checks your computer and lists every tool AgentOS Studio works with: Git, Node.js, the GitHub command line, Claude Code, Hermes and its plugins, your vault and the connections between agents. Green means ready. Amber means missing or broken. Rows marked <strong>optional</strong> are for tools you do not have to use.</p>
 
-              <h3>In AgentOS Studio 1.1: one button</h3>
-              <p>Version 1.1 adds a <span class="ui-label">Set up everything</span> button at the top of the Setup screen. It shows the plan first, then installs every missing tool in one pass:</p>
+              <h3>One button: Set up everything</h3>
+              <p>A <span class="ui-label">Set up everything</span> button sits at the top of the Setup screen. It shows the plan first, then installs every missing tool in one pass:</p>
               <figure class="mock">
-                <div class="mock-app" role="img" aria-label="Illustration of the Set up everything card in AgentOS Studio 1.1">
+                <div class="mock-app" role="img" aria-label="Illustration of the Set up everything card in AgentOS Studio">
                   <div class="bar"><b>Set up everything</b><span class="btn">Set up everything</span></div>
                   <ul>
                     <li><i class="warn"></i><span>Install Git, Node.js, GitHub CLI and Claude Code<small>Windows asks for admin permission once for all of them</small></span><em>1 prompt</em></li>
@@ -218,7 +218,7 @@
                     <li><i class="opt"></i><span>Last, sign in to GitHub, Claude and a Hermes model<small>Each opens its own window; finish it there</small></span><em class="go">your turn</em></li>
                   </ul>
                 </div>
-                <figcaption>Illustration of the 1.1 card. It lists only what your computer is missing.</figcaption>
+                <figcaption>Illustration of the card. It lists only what your computer is missing.</figcaption>
               </figure>
               <div class="os-block" data-for="windows">
                 <p class="os-label">Windows</p>
@@ -241,7 +241,7 @@
                 <li>and finally opens the sign-ins in <a href="#sign-ins">step 5</a>.</li>
               </ol>
 
-              <h3>In AgentOS Studio 1.0 (the current release)</h3>
+              <h3>On an older 1.0 build</h3>
               <p>Version 1.0 does the same work one row at a time. Each amber row has its own button: <span class="ui-label">Install</span>, <span class="ui-label">Sign in</span> or <span class="ui-label">Change model</span>. The big button at the top, <span class="ui-label">Auto-Setup and Repair Everything</span>, repairs everything that is broken in one go (1.1 renames it <strong>Repair what is broken</strong>). Press it, watch the Setup log, then press <span class="ui-label">Re-check</span>.</p>
               <div class="os-block" data-for="windows">
                 <p class="os-label">Windows</p>
@@ -371,7 +371,7 @@
                 </details>
                 <details>
                   <summary>A tool is installed but Setup still shows it as missing</summary>
-                  <div class="faq-body"><p>Close AgentOS Studio completely and open it again, then press <strong>Re-check</strong>. If it is still missing, sign out of your computer and back in: some installers only update the search path for new sessions. Version 1.1 fixes the path for you during setup.</p></div>
+                  <div class="faq-body"><p>Close AgentOS Studio completely and open it again, then press <strong>Re-check</strong>. If it is still missing, sign out of your computer and back in: some installers only update the search path for new sessions. Set up everything fixes the path for you.</p></div>
                 </details>
                 <details>
                   <summary>The sign-in window never opened</summary>
@@ -398,7 +398,7 @@
               <strong>That is everything.</strong>
               <p>Want the details? The app's own Help tab has every guide, and the same text is on GitHub.</p>
             </div>
-            <a class="ui-button ui-button--on-ink" href="https://github.com/konethegreat/agentos-studio/blob/main/docs/GETTING-STARTED.md">Read the full docs</a>
+            <a class="ui-button ui-button--on-ink" href="/docs/">Read the full docs</a>
           </div>
         </div>
       </div>
@@ -414,6 +414,7 @@
       <nav aria-label="Footer">
         <a href="/download/">Download</a>
         <a href="/setup/">Setup guide</a>
+        <a href="/docs/">Docs</a>
         <a href="https://github.com/konethegreat/agentos-studio">Repository</a>
         <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/INSTALL.md">Install notes</a>
         <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/TROUBLESHOOTING.md">Troubleshooting</a>

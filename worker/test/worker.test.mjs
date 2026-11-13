@@ -41,7 +41,7 @@ globalThis.fetch = async () => {
   return new Response(JSON.stringify(release), { headers: { "Content-Type": "application/json" } });
 };
 
-const worker = (await import("../src/index.js")).default;
+const { default: worker, stampVersion } = await import("../src/index.js");
 const ctx = { waitUntil: (promise) => promise };
 const assets = {
   fetch: async () => new Response("static asset", { status: 200, headers: { "Content-Type": "text/html" } })
@@ -115,6 +115,25 @@ test("rejects writes and passes static paths to the assets binding", async () =>
 
   const page = await call("/download/");
   assert.equal(await page.text(), "static asset");
+});
+
+test("every page carries the latest version before any script runs", async () => {
+  const html = '<p>Version <b class="js-version">1.0.0</b></p><code>AgentOS.Studio_<span class="js-version">1.0.0</span>_x64-setup.exe</code>';
+  assert.equal(
+    stampVersion(html, "1.2.6"),
+    '<p>Version <b class="js-version">1.2.6</b></p><code>AgentOS.Studio_<span class="js-version">1.2.6</span>_x64-setup.exe</code>'
+  );
+  assert.equal(stampVersion(html, "<script>"), html, "a version that is not a version is ignored");
+  const served = env.ASSETS;
+  env.ASSETS = { fetch: async () => new Response(html, { status: 200, headers: { "Content-Type": "text/html; charset=utf-8" } }) };
+  try {
+    const res = await call("/setup/");
+    const body = await res.text();
+    assert.ok(body.includes('class="js-version">9.9.9<'), body);
+    assert.ok(!body.includes("1.0.0"));
+  } finally {
+    env.ASSETS = served;
+  }
 });
 
 test("the latest redirect goes to the release page", async () => {
