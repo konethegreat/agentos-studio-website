@@ -3095,18 +3095,59 @@ code {
     grid-column: auto;
   }
 
-  .float-chip--a {
-    left: 4px;
-    bottom: 0;
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  .float-chip--b {
-    right: 4px;
-    top: 4px;
+  .hero-actions .ui-button {
+    width: 100%;
+  }
+
+  .hero-stage {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 8px 0 0;
+  }
+
+  .float-chip {
+    position: static;
+    align-self: flex-start;
+    max-width: 100%;
+    white-space: normal;
   }
 
   .app-window {
     transform: none;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .stat:nth-child(2) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .stat:last-child {
+    border-bottom: 0;
+  }
+
+  .os-tablist {
+    display: flex;
+    width: 100%;
+  }
+
+  .os-tab {
+    flex: 1 1 0;
+    padding: 9px 10px;
+    text-align: center;
   }
 
   .eia__list {
@@ -3169,7 +3210,25 @@ code {
   }
 
   .cta-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  .cta-actions {
+    width: 100%;
+  }
+
+  .footer-legal {
+    flex-direction: column;
     align-items: flex-start;
+  }
+
+  .guide-prose pre,
+  .guide-prose table,
+  .checksum-table {
+    max-width: 100%;
+    overflow-x: auto;
   }
 }
 
