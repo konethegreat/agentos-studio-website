@@ -1,5 +1,8 @@
-import { writeFile } from "node:fs/promises";
+import { readFile, readdir, writeFile } from "node:fs/promises";
+import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { normalizeRelease } from "../worker/src/map.js";
+import { stampVersion } from "../worker/src/index.js";
 
 const API = "https://api.github.com/repos/konethegreat/agentos-studio/releases/latest";
 const TARGET = new URL("../worker/src/release-fallback.json", import.meta.url);
@@ -25,3 +28,24 @@ if (!manifest) {
 
 await writeFile(TARGET, `${JSON.stringify(manifest, null, 2)}\n`);
 console.log(`Wrote ${manifest.tag} with ${Object.keys(manifest.assets).length} assets to ${TARGET.pathname}`);
+
+// The pages carry the version too (the Worker stamps it on every request; this keeps the files
+// right for local preview and for anyone reading the source).
+const publicDir = fileURLToPath(new URL("../public/", import.meta.url));
+async function pages(dir) {
+  const out = [];
+  for (const e of await readdir(dir, { withFileTypes: true })) {
+    const full = join(dir, e.name);
+    if (e.isDirectory()) out.push(...(await pages(full)));
+    else if (e.name.endsWith(".html")) out.push(full);
+  }
+  return out;
+}
+for (const file of await pages(publicDir)) {
+  const before = await readFile(file, "utf8");
+  const after = stampVersion(before, manifest.version);
+  if (after !== before) {
+    await writeFile(file, after);
+    console.log(`Stamped ${manifest.version} into ${file}`);
+  }
+}

@@ -22,7 +22,8 @@ async function walk(dir) {
     if (entry.name.startsWith(".") && entry.name !== ".github") continue;
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
-      if (SKIP_DIRS.has(entry.name)) continue;
+      // The repository's own docs/ (evidence and screenshots) is skipped; public/docs/ is a page.
+      if (SKIP_DIRS.has(entry.name) && (entry.name !== "docs" || dir === root)) continue;
       files.push(...(await walk(full)));
     } else {
       files.push(full);

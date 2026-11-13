@@ -35,6 +35,28 @@ function redirect(location, status = 302) {
   });
 }
 
+const VERSION_SPAN = /(<[^>]*\bclass="[^"]*\bjs-version\b[^"]*"[^>]*>)[^<]*(<)/g;
+
+/** Write the release version into every `.js-version` element, so the page is right before any
+ * script runs and for link previews. Pure. */
+export function stampVersion(html, version) {
+  if (!version || !/^[0-9A-Za-z.+-]+$/.test(version)) return html;
+  return html.replace(VERSION_SPAN, `$1${version}$2`);
+}
+
+async function page(request, env, ctx) {
+  const res = await env.ASSETS.fetch(request);
+  const type = res.headers.get("Content-Type") || "";
+  if (request.method !== "GET" || !res.ok || !type.includes("text/html")) return res;
+  const manifest = await latestRelease(ctx);
+  const html = stampVersion(await res.text(), manifest && manifest.version);
+  const headers = new Headers(res.headers);
+  headers.delete("Content-Length");
+  headers.delete("ETag");
+  headers.set("Cache-Control", "public, max-age=300");
+  return new Response(html, { status: res.status, headers });
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -66,10 +88,10 @@ export default {
       return redirect("/download/");
     }
 
-    if (pathname.startsWith("/download/") || pathname.startsWith("/api/")) {
+    if (pathname.startsWith("/api/")) {
       return env.ASSETS.fetch(request);
     }
 
-    return env.ASSETS.fetch(request);
+    return page(request, env, ctx);
   }
 };
