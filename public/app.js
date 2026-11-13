@@ -375,4 +375,85 @@
       });
     }
   }
+  // ---------------------------------------------------------------------------
+  // Product tour: chapter jumps into the recorded walkthrough and the sound
+  // toggle. The video starts muted, per browser autoplay rules, and only the
+  // visitor turns sound on.
+  // ---------------------------------------------------------------------------
+
+  each("[data-reel]", function (reel) {
+    var video = reel.querySelector("[data-reel-video]");
+    if (!video) return;
+    var chips = Array.prototype.slice.call(reel.querySelectorAll("[data-reel-at]"));
+    var sound = reel.querySelector("[data-reel-sound]");
+    var soundLabel = reel.querySelector("[data-reel-sound-label]");
+    var poster = reel.querySelector("[data-reel-poster]");
+    var play = reel.querySelector("[data-reel-play]");
+
+    function start() {
+      if (poster) poster.classList.add("is-hidden");
+      reel.classList.add("is-started");
+    }
+
+    video.addEventListener("play", start);
+
+    if (play) {
+      play.addEventListener("click", function () {
+        start();
+        var attempt = video.play();
+        if (attempt && attempt.catch) {
+          attempt.catch(function () {
+            reel.classList.remove("is-started");
+            if (poster) poster.classList.remove("is-hidden");
+          });
+        }
+      });
+    }
+
+    function markChip() {
+      var time = video.currentTime;
+      var active = -1;
+      chips.forEach(function (chip, i) {
+        if (time + 0.35 >= Number(chip.getAttribute("data-reel-at"))) active = i;
+      });
+      chips.forEach(function (chip, i) {
+        var on = i === active;
+        chip.classList.toggle("is-current", on);
+        if (on) chip.setAttribute("aria-current", "true");
+        else chip.removeAttribute("aria-current");
+      });
+    }
+
+    chips.forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        video.currentTime = Number(chip.getAttribute("data-reel-at")) + 0.02;
+        var attempt = video.play();
+        if (attempt && attempt.catch) {
+          attempt.catch(function () {
+            markChip();
+          });
+        }
+      });
+    });
+
+    video.addEventListener("timeupdate", markChip);
+
+    function refreshSound() {
+      if (!sound || !soundLabel) return;
+      var on = !video.muted && video.volume > 0;
+      sound.setAttribute("aria-pressed", on ? "true" : "false");
+      soundLabel.textContent = on ? "Sound on" : "Sound off";
+    }
+
+    if (sound) {
+      sound.addEventListener("click", function () {
+        video.muted = !video.muted;
+        if (!video.muted && video.volume === 0) video.volume = 0.9;
+        refreshSound();
+      });
+    }
+
+    video.addEventListener("volumechange", refreshSound);
+    refreshSound();
+  });
 })();

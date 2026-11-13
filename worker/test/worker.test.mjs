@@ -43,14 +43,63 @@ globalThis.fetch = async () => {
 
 const { default: worker, stampVersion } = await import("../src/index.js");
 const ctx = { waitUntil: (promise) => promise };
+const videoBytes = new Uint8Array(100).map((_, i) => i);
 const assets = {
-  fetch: async () => new Response("static asset", { status: 200, headers: { "Content-Type": "text/html" } })
+  fetch: async (request) => {
+    const { pathname } = new URL(request.url);
+    if (pathname.startsWith("/assets/video/")) {
+      return new Response(videoBytes, {
+        status: 200,
+        headers: {
+          "Content-Type": "video/mp4",
+          "ETag": "\"video-1\"",
+          "Cache-Control": "public, max-age=31536000, immutable"
+        }
+      });
+    }
+    return new Response("static asset", { status: 200, headers: { "Content-Type": "text/html" } });
+  }
 };
 const env = { ASSETS: assets };
 
-function call(path, method = "GET") {
-  return worker.fetch(new Request(`https://site.test${path}`, { method }), env, ctx);
+function call(path, method = "GET", headers = {}) {
+  return worker.fetch(new Request(`https://site.test${path}`, { method, headers }), env, ctx);
 }
+
+test("serves video byte ranges so the player can seek", async () => {
+  const full = await call("/assets/video/studio-demo.mp4");
+  assert.equal(full.status, 200);
+  assert.equal(full.headers.get("Accept-Ranges"), "bytes");
+  assert.equal(full.headers.get("Content-Type"), "video/mp4");
+  assert.equal((await full.arrayBuffer()).byteLength, 100);
+
+  const partial = await call("/assets/video/studio-demo.mp4", "GET", { Range: "bytes=10-19" });
+  assert.equal(partial.status, 206);
+  assert.equal(partial.headers.get("Content-Range"), "bytes 10-19/100");
+  assert.equal(partial.headers.get("Content-Length"), "10");
+  assert.deepEqual(new Uint8Array(await partial.arrayBuffer()), videoBytes.slice(10, 20));
+
+  const tail = await call("/assets/video/studio-demo.mp4", "GET", { Range: "bytes=-10" });
+  assert.equal(tail.status, 206);
+  assert.equal(tail.headers.get("Content-Range"), "bytes 90-99/100");
+
+  const open = await call("/assets/video/studio-demo.mp4", "GET", { Range: "bytes=90-" });
+  assert.equal(open.status, 206);
+  assert.equal(open.headers.get("Content-Range"), "bytes 90-99/100");
+
+  const beyond = await call("/assets/video/studio-demo.mp4", "GET", { Range: "bytes=200-250" });
+  assert.equal(beyond.status, 416);
+  assert.equal(beyond.headers.get("Content-Range"), "bytes */100");
+});
+
+test("ignores a range when the player holds an older copy", async () => {
+  const stale = await call("/assets/video/studio-demo.mp4", "GET", { Range: "bytes=10-19", "If-Range": "\"video-0\"" });
+  assert.equal(stale.status, 200);
+  assert.equal((await stale.arrayBuffer()).byteLength, 100);
+
+  const current = await call("/assets/video/studio-demo.mp4", "GET", { Range: "bytes=10-19", "If-Range": "\"video-1\"" });
+  assert.equal(current.status, 206);
+});
 
 test("redirects a platform path to the matching latest asset", async () => {
   const response = await call("/download/windows");
