@@ -43,7 +43,7 @@
         <p class="lede">Seven short steps for <strong data-chosen-os>your computer</strong>. No terminal needed on Windows or macOS: the app installs its own tools and you only answer the prompts a person has to answer. Tick each step as you go.</p>
         <div class="page-meta">
           <span class="pill">About 15 minutes</span>
-          <span class="pill">Version <span class="js-version">1.2.5</span></span>
+          <span class="pill">Version <span class="js-version">1.2.6</span></span>
         </div>
           <div class="os-switch" data-os-switch hidden>
             <span>My computer runs</span>
@@ -86,7 +86,7 @@
             <div class="step-body">
               <div class="os-block" data-for="windows">
                 <p class="os-label">Windows</p>
-                <p>Press the button. Your browser saves <code>AgentOS.Studio_<span class="js-version">1.2.5</span>_x64-setup.exe</code>, about 6 MB, to your Downloads folder.</p>
+                <p>Press the button. Your browser saves <code>AgentOS.Studio_<span class="js-version">1.2.6</span>_x64-setup.exe</code>, about 6 MB, to your Downloads folder.</p>
                 <p><a class="ui-button ui-button--lg" href="/download/windows">Download for Windows</a></p>
                 <p>Working for a company that installs software centrally? Your IT team may prefer the <a href="/download/windows-msi">MSI installer</a>.</p>
               </div>
@@ -104,9 +104,9 @@
                 <summary>Optional: check that the file is the one we published</summary>
                 <p>Each release on <a href="https://github.com/konethegreat/agentos-studio/releases/latest">GitHub</a> lists a SHA256SUMS file per system. Run the command for your system in the folder with the download, and compare the long string it prints with the line for the same file name. They must match exactly; if they do not, delete the file and download it again.</p>
                 <p>Windows, in PowerShell:</p>
-                <div class="code-line"><code id="cmd-1">Get-FileHash .\AgentOS.Studio_<span class="js-version">1.2.5</span>_x64-setup.exe -Algorithm SHA256</code><button class="copy-btn" type="button" data-copy="cmd-1" hidden>Copy</button></div>
+                <div class="code-line"><code id="cmd-1">Get-FileHash .\AgentOS.Studio_<span class="js-version">1.2.6</span>_x64-setup.exe -Algorithm SHA256</code><button class="copy-btn" type="button" data-copy="cmd-1" hidden>Copy</button></div>
                 <p>macOS and Linux, in Terminal:</p>
-                <div class="code-line"><code id="cmd-2">shasum -a 256 ~/Downloads/AgentOS.Studio_<span class="js-version">1.2.5</span>_*</code><button class="copy-btn" type="button" data-copy="cmd-2" hidden>Copy</button></div>
+                <div class="code-line"><code id="cmd-2">shasum -a 256 ~/Downloads/AgentOS.Studio_<span class="js-version">1.2.6</span>_*</code><button class="copy-btn" type="button" data-copy="cmd-2" hidden>Copy</button></div>
               </details>
             </div>
             <label class="step-done"><input type="checkbox"> I have done this step</label>
@@ -123,7 +123,7 @@
               <div class="os-block" data-for="windows">
                 <p class="os-label">Windows</p>
                 <ol>
-                  <li>Open your Downloads folder and double-click <code>AgentOS.Studio_<span class="js-version">1.2.5</span>_x64-setup.exe</code>.</li>
+                  <li>Open your Downloads folder and double-click <code>AgentOS.Studio_<span class="js-version">1.2.6</span>_x64-setup.exe</code>.</li>
                   <li>A blue box appears: <strong>Windows protected your PC</strong>. This is expected: the app is new and not signed with a paid certificate. Click <span class="ui-label">More info</span>.</li>
                   <li>The box now shows the app name and <em>Unknown publisher</em>. Click <span class="ui-label">Run anyway</span>.</li>
                   <li>The installer opens. Click <span class="ui-label">Next</span> and <span class="ui-label">Install</span>. It installs for your user only and does not need an administrator password.</li>
@@ -133,7 +133,7 @@
                     <p class="t">Windows protected your PC</p>
                     <p class="b">Microsoft Defender SmartScreen prevented an unrecognized app from starting. Running this app might put your PC at risk.</p>
                     <span class="more hl">More info</span>
-                    <p class="rows">App: AgentOS.Studio_<span class="js-version">1.2.5</span>_x64-setup.exe<br>Publisher: Unknown publisher</p>
+                    <p class="rows">App: AgentOS.Studio_<span class="js-version">1.2.6</span>_x64-setup.exe<br>Publisher: Unknown publisher</p>
                     <p class="btns"><span class="hl">Run anyway</span><span>Don't run</span></p>
                   </div>
                   <figcaption>Illustration of the box you will see. Click the two highlighted items, in that order.</figcaption>
@@ -162,12 +162,12 @@
               <div class="os-block" data-for="linux">
                 <p class="os-label">Linux</p>
                 <p><strong>AppImage:</strong> open Terminal in your Downloads folder and run these two lines. The first makes the file runnable, the second starts it.</p>
-                <div class="code-line"><code id="cmd-3">chmod +x AgentOS.Studio_<span class="js-version">1.2.5</span>_amd64.AppImage</code><button class="copy-btn" type="button" data-copy="cmd-3" hidden>Copy</button></div>
-                <div class="code-line"><code id="cmd-4">./AgentOS.Studio_<span class="js-version">1.2.5</span>_amd64.AppImage</code><button class="copy-btn" type="button" data-copy="cmd-4" hidden>Copy</button></div>
+                <div class="code-line"><code id="cmd-3">chmod +x AgentOS.Studio_<span class="js-version">1.2.6</span>_amd64.AppImage</code><button class="copy-btn" type="button" data-copy="cmd-3" hidden>Copy</button></div>
+                <div class="code-line"><code id="cmd-4">./AgentOS.Studio_<span class="js-version">1.2.6</span>_amd64.AppImage</code><button class="copy-btn" type="button" data-copy="cmd-4" hidden>Copy</button></div>
                 <p><strong>.deb</strong> (Ubuntu, Debian, Mint):</p>
-                <div class="code-line"><code id="cmd-5">sudo apt install ./AgentOS.Studio_<span class="js-version">1.2.5</span>_amd64.deb</code><button class="copy-btn" type="button" data-copy="cmd-5" hidden>Copy</button></div>
+                <div class="code-line"><code id="cmd-5">sudo apt install ./AgentOS.Studio_<span class="js-version">1.2.6</span>_amd64.deb</code><button class="copy-btn" type="button" data-copy="cmd-5" hidden>Copy</button></div>
                 <p><strong>.rpm</strong> (Fedora, RHEL):</p>
-                <div class="code-line"><code id="cmd-6">sudo dnf install ./AgentOS.Studio-<span class="js-version">1.2.5</span>-1.x86_64.rpm</code><button class="copy-btn" type="button" data-copy="cmd-6" hidden>Copy</button></div>
+                <div class="code-line"><code id="cmd-6">sudo dnf install ./AgentOS.Studio-<span class="js-version">1.2.6</span>-1.x86_64.rpm</code><button class="copy-btn" type="button" data-copy="cmd-6" hidden>Copy</button></div>
                 <div class="callout"><div><p>If the AppImage says FUSE is missing, install it with <code>sudo apt install libfuse2</code> (Ubuntu 22.04) or <code>sudo apt install libfuse2t64</code> (Ubuntu 24.04), then run it again.</p></div></div>
               </div>
             </div>
