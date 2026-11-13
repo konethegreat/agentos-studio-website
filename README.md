@@ -16,8 +16,10 @@ in the footer and in its author metadata.
 - Cloudflare Workers with static assets (`wrangler.jsonc`), no framework and no build step.
 - Plain HTML, CSS and two small browser scripts: `public/app.js` (OS detection, release data, the
   ported UI Vault interactions, setup guide progress) and `public/nebula.js` (the WebGL hero).
-- App screenshots live in `public/assets/screens/` as WebP. UI Vault and Magic UI components are
-  credited on `/credits/`; only MIT entries are reused.
+- App screenshots live in `public/assets/screens/` as WebP. The 84 second product tour lives in
+  `public/assets/video/` as `studio-demo.mp4` (H.264, 1920x1080, 19.4 MB, recorded in the light
+  theme) with `studio-demo-poster.jpg`. UI Vault and Magic UI components are credited on `/credits/`;
+  only MIT entries are reused.
 - Worker entry: `worker/src/index.js`. Release mapping and tests: `worker/src/map.js`.
 - Node 22 or newer for tests and tooling. Wrangler 4 for local preview and deploy.
 
@@ -25,7 +27,7 @@ in the footer and in its author metadata.
 
 | Path | File | Purpose |
 | --- | --- | --- |
-| `/` | `public/index.html` | Nebula hero, feature cards, app screenshots, mission flow, OS-detecting download section, setup path |
+| `/` | `public/index.html` | Nebula hero, feature cards, the product tour video with chapter jumps and a sound toggle, app screenshots, mission flow, OS-detecting download section, setup path |
 | `/setup/` | `public/setup/index.html` | Step by step guide for non-technical users on Windows, macOS and Linux: download, installer prompts, first launch, Setup screen (1.0 and 1.1), sign-ins, first chat and goal, troubleshooting |
 | `/download/` | `public/download/index.html` | Installers per platform, unsigned build steps, requirements |
 | `/privacy/` | `public/privacy/index.html` | What this site collects (nothing) and what Cloudflare sees |
@@ -46,10 +48,20 @@ in the footer and in its author metadata.
 | `GET /download/linux-rpm` | Redirect to the latest rpm |
 | `GET /download/latest` | Redirect to the latest release page |
 | Unknown platform | Redirect to `/download/` |
+| `GET /assets/video/*` | The product tour video with byte range support: answers `Range` with `206` and `Content-Range` so the player can seek, `416` past the end, and the whole file when `If-Range` names an older copy |
 
 Aliases (`win`, `mac`, `osx`, `appimage`, `deb`, `rpm`, `msi`) are mapped in
 `worker/src/map.js`. Asset URLs are only accepted when they start with the repository's release
 download prefix, so a hostile or malformed API response cannot redirect off GitHub.
+
+Workers static assets answer `Range` requests with the whole file, which leaves the video player
+with nothing to seek into. The Worker therefore owns `/assets/video/*`: it fetches the file from the
+assets binding, then slices the requested bytes itself. `worker/test/worker.test.mjs` covers plain,
+suffix, open ended, past the end and stale `If-Range` cases.
+
+The product tour section on `/` starts muted with a poster overlay and a play button. The chapter
+buttons under the player jump to Today, Chat, Work, Brain, Code and System, and the sound button
+unmutes the beat. Times are 4.8, 9.6, 14.4, 43.2, 55.2 and 62.4 seconds in the 84 second cut.
 
 The Worker asks `https://api.github.com/repos/konethegreat/agentos-studio/releases/latest`, caches
 the answer for 15 minutes at the edge, and falls back to `worker/src/release-fallback.json` when

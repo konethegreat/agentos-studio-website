@@ -1108,6 +1108,199 @@ code {
   color: var(--ink-soft);
 }
 
+/* Product tour: the recorded walkthrough, with beat-synced chapter jumps. */
+
+.reel {
+  margin: 0;
+}
+
+.reel__stage {
+  padding: 10px;
+  border-radius: 24px;
+  background: var(--night);
+  box-shadow: var(--shadow);
+}
+
+.reel__screen {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  background: var(--night);
+}
+
+.reel__video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 15px;
+  background: var(--night);
+}
+
+.reel__poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease);
+}
+
+.js .reel__poster {
+  opacity: 1;
+}
+
+.reel__poster.is-hidden {
+  opacity: 0;
+}
+
+.reel__play {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  justify-content: center;
+  width: 78px;
+  height: 78px;
+  padding: 0;
+  border: 1px solid rgba(251, 249, 244, 0.45);
+  border-radius: 50%;
+  background: rgba(11, 14, 21, 0.72);
+  color: var(--paper-soft);
+  cursor: pointer;
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease), opacity 0.3s var(--ease);
+}
+
+.js .reel__play {
+  display: inline-flex;
+}
+
+.reel__play:hover {
+  background: var(--ink);
+  border-color: var(--paper-soft);
+}
+
+.reel__play:focus-visible {
+  outline: 2px solid var(--paper-soft);
+  outline-offset: 4px;
+}
+
+.reel.is-started .reel__play {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.reel__bar {
+  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  margin-top: 18px;
+}
+
+.js .reel__bar {
+  display: flex;
+}
+
+.reel__chapters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.reel__label {
+  margin-right: 4px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.reel__chip {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper-soft);
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.reel__chip:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.reel__chip.is-current {
+  border-color: var(--cornflower);
+  background: var(--cornflower-soft);
+  color: var(--cornflower-deep);
+}
+
+.reel__chip:focus-visible {
+  outline: 2px solid var(--cornflower-deep);
+  outline-offset: 3px;
+}
+
+.reel__sound {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ink);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--paper-soft);
+  cursor: pointer;
+  transition: background 0.2s var(--ease);
+}
+
+.reel__sound:hover {
+  background: var(--ink-soft);
+}
+
+.reel__sound:focus-visible {
+  outline: 2px solid var(--cornflower-deep);
+  outline-offset: 3px;
+}
+
+.reel__led {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(251, 249, 244, 0.4);
+  transition: background 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+.reel__sound[aria-pressed="true"] .reel__led {
+  background: var(--signal);
+  box-shadow: 0 0 0 3px rgba(232, 163, 61, 0.25);
+}
+
+.reel__note {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+
 /* Mission flow */
 
 .flow {
@@ -3184,6 +3377,52 @@ code {
 
   .eia__text {
     grid-column: 1;
+  }
+
+  .reel__stage {
+    padding: 6px;
+    border-radius: 18px;
+  }
+
+  .reel__video {
+    border-radius: 12px;
+  }
+
+  .reel__screen {
+    border-radius: 12px;
+  }
+
+  .reel__play {
+    width: 62px;
+    height: 62px;
+  }
+
+  .reel__bar {
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .reel__chapters {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    gap: 8px;
+  }
+
+  .reel__label {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin: 0 0 2px;
+  }
+
+  .reel__chip {
+    width: 100%;
+    min-width: 0;
+    padding: 0 8px;
+  }
+
+  .reel__sound {
+    justify-content: center;
   }
 
   .step-body {
