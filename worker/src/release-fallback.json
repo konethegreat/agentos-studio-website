@@ -1,43 +1,43 @@
 {
-  "version": "1.5.1",
-  "tag": "v1.5.1",
-  "publishedAt": "2026-11-16T20:24:58Z",
-  "page": "https://github.com/konethegreat/agentos-studio/releases/tag/v1.5.1",
+  "version": "1.6.1",
+  "tag": "v1.6.1",
+  "publishedAt": "2026-11-16T22:51:53Z",
+  "page": "https://github.com/konethegreat/agentos-studio/releases/tag/v1.6.1",
   "assets": {
     "windows": {
-      "name": "AgentOS.Studio_1.5.1_x64-setup.exe",
-      "size": 7319841,
-      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v1.5.1/AgentOS.Studio_1.5.1_x64-setup.exe"
+      "name": "AgentOS.Studio_1.6.1_x64-setup.exe",
+      "size": 7375375,
+      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v1.6.1/AgentOS.Studio_1.6.1_x64-setup.exe"
     },
     "windows-msi": {
-      "name": "AgentOS.Studio_1.5.1_x64_en-US.msi",
-      "size": 10358784,
-      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v1.5.1/AgentOS.Studio_1.5.1_x64_en-US.msi"
+      "name": "AgentOS.Studio_1.6.1_x64_en-US.msi",
+      "size": 10432512,
+      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v1.6.1/AgentOS.Studio_1.6.1_x64_en-US.msi"
     },
     "macos-arm64": {
-      "name": "AgentOS.Studio_1.5.1_aarch64.dmg",
-      "size": 8676234,
-      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v1.5.1/AgentOS.Studio_1.5.1_aarch64.dmg"
+      "name": "AgentOS.Studio_1.6.1_aarch64.dmg",
+      "size": 8736342,
+      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v1.6.1/AgentOS.Studio_1.6.1_aarch64.dmg"
     },
     "macos-x64": {
-      "name": "AgentOS.Studio_1.5.1_x64.dmg",
-      "size": 9135762,
-      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v1.5.1/AgentOS.Studio_1.5.1_x64.dmg"
+      "name": "AgentOS.Studio_1.6.1_x64.dmg",
+      "size": 9204221,
+      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v1.6.1/AgentOS.Studio_1.6.1_x64.dmg"
     },
     "linux-appimage": {
-      "name": "AgentOS.Studio_1.5.1_amd64.AppImage",
-      "size": 87321080,
-      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v1.5.1/AgentOS.Studio_1.5.1_amd64.AppImage"
+      "name": "AgentOS.Studio_1.6.1_amd64.AppImage",
+      "size": 87370232,
+      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v1.6.1/AgentOS.Studio_1.6.1_amd64.AppImage"
     },
     "linux-deb": {
-      "name": "AgentOS.Studio_1.5.1_amd64.deb",
-      "size": 9428764,
-      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v1.5.1/AgentOS.Studio_1.5.1_amd64.deb"
+      "name": "AgentOS.Studio_1.6.1_amd64.deb",
+      "size": 9494284,
+      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v1.6.1/AgentOS.Studio_1.6.1_amd64.deb"
     },
     "linux-rpm": {
-      "name": "AgentOS.Studio-1.5.1-1.x86_64.rpm",
-      "size": 9432535,
-      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v1.5.1/AgentOS.Studio-1.5.1-1.x86_64.rpm"
+      "name": "AgentOS.Studio-1.6.1-1.x86_64.rpm",
+      "size": 9495930,
+      "url": "https://github.com/konethegreat/agentos-studio/releases/download/v1.6.1/AgentOS.Studio-1.6.1-1.x86_64.rpm"
     }
   }
 }
