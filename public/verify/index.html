@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verify public ledger: AgentOS Studio</title>
+  <meta name="description" content="Public proof ledger and Ed25519 verification key for AgentOS Studio autonomous merges across public repositories.">
+  <meta name="author" content="Kone Tshivhinda and K-ONE IT SOLUTIONS">
+  <meta name="theme-color" content="#f4f1ea">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/" aria-label="AgentOS Studio home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">AgentOS<span>studio</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="/download/">Download</a>
+        <a href="/setup/">Setup guide</a>
+        <a class="nav-wide" href="/docs/">Docs</a>
+        <a class="nav-wide" href="https://github.com/konethegreat/agentos-studio">GitHub</a>
+      </nav>
+      <a class="ui-button ui-button--sm header-cta" href="/download/" data-download><span data-download-label>Get the app</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="wrap">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Public Proof Ledger</p>
+        <h1>Verify every public merge.</h1>
+        <p class="lede">Totals and per-repository receipts for public repositories only. Private sandboxes are excluded from this ledger.</p>
+        <div class="page-meta">
+          <span class="pill">Status: <strong data-ledger-ok>verified</strong></span>
+          <span class="pill">Total receipts: <strong data-ledger-total>200</strong></span>
+          <span class="pill">Updated: <strong data-ledger-date>2026-11-17</strong></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap prose">
+      <h2>Public signing key</h2>
+      <p>Every receipt in the local hash chain is signed with Ed25519 and linked to the previous receipt hash. The public key for fleet verification is:</p>
+      <pre><code data-ledger-key>ed25519:agentos-studio-fleet</code></pre>
+
+      <h2>Public repositories</h2>
+      <p>Only public repositories appear below. Private sandboxes and local experiments never leave your machine.</p>
+      <ul data-ledger-repos>
+        <li><code>konethegreat/agentos-studio</code>: 195 receipts</li>
+        <li><code>konethegreat/agentos-studio-website</code>: 5 receipts</li>
+      </ul>
+
+      <h2>How to verify locally</h2>
+      <p>In AgentOS Studio, open <strong>Timeline</strong> or call the <code>public_ledger</code> and <code>receipts_verify</code> commands to check the SHA-256 chain and Ed25519 signatures against your local <code>receipts.jsonl</code> file, or fetch the live summary at <a href="/api/ledger"><code>/api/ledger</code></a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-mark">AgentOS Studio</p>
+        <p class="footer-note">A desktop control plane for coding agents. Chats, keys and notes stay on your machine. Built by Kone Tshivhinda and K-ONE IT SOLUTIONS in Johannesburg.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="/download/">Download</a>
+        <a href="/setup/">Setup guide</a>
+        <a href="/docs/">Docs</a>
+        <a href="/verify/">Verify ledger</a>
+        <a href="https://github.com/konethegreat/agentos-studio">Repository</a>
+        <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/INSTALL.md">Install notes</a>
+        <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/TROUBLESHOOTING.md">Troubleshooting</a>
+        <a href="https://github.com/konethegreat/agentos-studio/blob/main/docs/PRIVACY.md">App privacy</a>
+        <a href="/privacy/">Site privacy</a>
+        <a href="/credits/">Credits</a>
+      </nav>
+    </div>
+    <div class="wrap footer-legal">
+      <p>Copyright 2026 Kone Tshivhinda and K-ONE IT SOLUTIONS. AgentOS Studio is MIT licensed.</p>
+      <p>UI Vault components by <a href="https://github.com/konethegreat/ui-vault">Kone Tshivhinda</a> and Magic UI, MIT. Fonts under the SIL Open Font License. <a href="/credits/">Full credits</a>.</p>
+    </div>
+  </footer>
+  <script src="/app.js" defer></script>
+  <script src="/nebula.js" defer></script>
+</body>
+</html>

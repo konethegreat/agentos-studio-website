@@ -137,6 +137,49 @@
   }
 
   // ---------------------------------------------------------------------------
+  // Public Proof Ledger on /verify/
+  // ---------------------------------------------------------------------------
+
+  if (document.querySelector("[data-ledger-total]")) {
+    fetch("/api/ledger", { headers: { Accept: "application/json" } })
+      .then(function (response) {
+        if (!response.ok) throw new Error("ledger lookup failed");
+        return response.json();
+      })
+      .then(function (ledger) {
+        each("[data-ledger-ok]", function (node) {
+          node.textContent = ledger.ok ? "verified" : "check failed";
+        });
+        each("[data-ledger-total]", function (node) {
+          if (typeof ledger.total_receipts === "number") {
+            node.textContent = String(ledger.total_receipts);
+          }
+        });
+        each("[data-ledger-date]", function (node) {
+          if (ledger.generated_at) node.textContent = ledger.generated_at;
+        });
+        each("[data-ledger-key]", function (node) {
+          if (ledger.public_key) node.textContent = ledger.public_key;
+        });
+        each("[data-ledger-repos]", function (list) {
+          if (!Array.isArray(ledger.repos) || !ledger.repos.length) return;
+          list.innerHTML = "";
+          ledger.repos.forEach(function (entry) {
+            var li = document.createElement("li");
+            var code = document.createElement("code");
+            code.textContent = entry.repo;
+            li.appendChild(code);
+            li.appendChild(document.createTextNode(": " + entry.receipts + " receipts"));
+            list.appendChild(li);
+          });
+        });
+      })
+      .catch(function () {
+        // Static fallback values remain visible.
+      });
+  }
+
+  // ---------------------------------------------------------------------------
   // Reveal on scroll
   // ---------------------------------------------------------------------------
 
