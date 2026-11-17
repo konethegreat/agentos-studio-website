@@ -43,19 +43,19 @@
       <form data-intake-form>
         <p>
           <label for="intake-repo"><strong>Repository (owner/name)</strong></label><br>
-          <input id="intake-repo" name="repository" type="text" required placeholder="client-org/client-repo" style="width:100%;max-width:480px;padding:10px;margin-top:6px;">
+          <input class="intake-input" id="intake-repo" name="repository" type="text" required placeholder="client-org/client-repo">
         </p>
         <p>
           <label for="intake-deadline"><strong>Target deadline</strong></label><br>
-          <input id="intake-deadline" name="deadline" type="date" required style="width:100%;max-width:260px;padding:10px;margin-top:6px;">
+          <input class="intake-input intake-input--date" id="intake-deadline" name="deadline" type="date" required>
         </p>
         <p>
           <label for="intake-contact"><strong>Contact email (optional)</strong></label><br>
-          <input id="intake-contact" name="contact" type="email" placeholder="you@company.com" style="width:100%;max-width:480px;padding:10px;margin-top:6px;">
+          <input class="intake-input" id="intake-contact" name="contact" type="email" placeholder="you@company.com">
         </p>
         <p>
           <label for="intake-goal"><strong>Goal</strong></label><br>
-          <textarea id="intake-goal" name="goal" rows="5" required placeholder="Describe the deliverable, acceptance criteria, and constraints." style="width:100%;max-width:640px;padding:10px;margin-top:6px;"></textarea>
+          <textarea class="intake-input intake-input--wide" id="intake-goal" name="goal" rows="5" required placeholder="Describe the deliverable, acceptance criteria, and constraints."></textarea>
         </p>
         <p>
           <button class="ui-button" type="submit">Submit intake</button>
