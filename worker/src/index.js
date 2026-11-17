@@ -1,4 +1,5 @@
 import { latestRelease, pickAsset, publicManifest } from "./releases.js";
+import ledger from "./ledger.js";
 
 const SECURITY_HEADERS = {
   "X-Content-Type-Options": "nosniff",
@@ -147,6 +148,10 @@ export default {
     if (pathname === "/api/releases" || pathname === "/api/releases/") {
       const manifest = await latestRelease(ctx);
       return json(publicManifest(manifest));
+    }
+
+    if (pathname === "/api/ledger" || pathname === "/api/ledger/") {
+      return json(ledger);
     }
 
     if (pathname === "/download/latest" || pathname === "/download/latest/") {
