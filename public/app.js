@@ -180,6 +180,49 @@
   }
 
   // ---------------------------------------------------------------------------
+  // Client intake form on /intake/
+  // ---------------------------------------------------------------------------
+
+  var intakeForm = document.querySelector("[data-intake-form]");
+  if (intakeForm) {
+    var intakeStatus = document.querySelector("[data-intake-status]");
+    intakeForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var data = new FormData(intakeForm);
+      var payload = {
+        repository: String(data.get("repository") || "").trim(),
+        deadline: String(data.get("deadline") || "").trim(),
+        contact: String(data.get("contact") || "").trim(),
+        goal: String(data.get("goal") || "").trim()
+      };
+      if (intakeStatus) intakeStatus.textContent = "Submitting intake...";
+      fetch("/api/intake", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload)
+      })
+        .then(function (res) {
+          return res.json().then(function (body) {
+            return { ok: res.ok, body: body };
+          });
+        })
+        .then(function (result) {
+          if (!result.ok) {
+            if (intakeStatus) intakeStatus.textContent = result.body.error || "Submission failed.";
+            return;
+          }
+          if (intakeStatus) {
+            intakeStatus.textContent = "Intake received (" + result.body.id + "). Quote will be sent for owner approval.";
+          }
+          intakeForm.reset();
+        })
+        .catch(function () {
+          if (intakeStatus) intakeStatus.textContent = "Network error while submitting intake.";
+        });
+    });
+  }
+
+  // ---------------------------------------------------------------------------
   // Reveal on scroll
   // ---------------------------------------------------------------------------
 

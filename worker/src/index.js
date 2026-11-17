@@ -137,6 +137,31 @@ export default {
       return new Response(null, { status: 204, headers: { ...CORS, ...SECURITY_HEADERS } });
     }
 
+    if (request.method === "POST" && (pathname === "/api/intake" || pathname === "/api/intake/")) {
+      let body;
+      try {
+        body = await request.json();
+      } catch {
+        return json({ error: "Invalid JSON body" }, 400);
+      }
+      const goal = typeof body.goal === "string" ? body.goal.trim() : "";
+      const repository = typeof body.repository === "string" ? body.repository.trim() : "";
+      const deadline = typeof body.deadline === "string" ? body.deadline.trim() : "";
+      const contact = typeof body.contact === "string" ? body.contact.trim() : "";
+      if (!goal || !repository || !deadline) {
+        return json({ error: "goal, repository, and deadline are required" }, 400);
+      }
+      return json({
+        id: `INT-${Date.now()}`,
+        status: "received",
+        goal,
+        repository,
+        deadline,
+        contact: contact || null,
+        received_at: new Date().toISOString()
+      }, 201);
+    }
+
     if (request.method !== "GET" && request.method !== "HEAD") {
       return json({ error: "Method not allowed", allow: "GET, HEAD" }, 405);
     }

@@ -190,3 +190,35 @@ test("the latest redirect goes to the release page", async () => {
   assert.equal(response.status, 302);
   assert.equal(response.headers.get("Location"), "https://github.com/konethegreat/agentos-studio/releases/tag/v9.9.9");
 });
+
+test("POST /api/intake validates required fields and accepts valid intake", async () => {
+  const bad = await worker.fetch(
+    new Request("https://site.test/api/intake", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ goal: "" })
+    }),
+    env,
+    ctx
+  );
+  assert.equal(bad.status, 400);
+
+  const ok = await worker.fetch(
+    new Request("https://site.test/api/intake", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        goal: "Build OAuth flow",
+        repository: "client/app",
+        deadline: "2026-12-01"
+      })
+    }),
+    env,
+    ctx
+  );
+  assert.equal(ok.status, 201);
+  const data = await ok.json();
+  assert.equal(data.status, "received");
+  assert.equal(data.repository, "client/app");
+  assert.ok(data.id.startsWith("INT-"));
+});
